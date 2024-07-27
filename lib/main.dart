@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news/core/app_router.dart';
+import 'package:news/core/constants.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +15,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
+      theme: ThemeData.light().copyWith(
+        scaffoldBackgroundColor: scaffoldColor,
+      ),
     );
   }
 }
