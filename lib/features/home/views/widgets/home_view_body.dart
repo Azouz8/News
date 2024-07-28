@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:news/core/assets.dart';
-import 'package:news/core/styles.dart';
 
 import 'custom_app_bar_icon.dart';
 import 'custom_header.dart';
@@ -31,13 +29,24 @@ class HomeViewBody extends StatelessWidget {
             height: 24,
           ),
           CustomHeader(),
-          TopHeadLinesListViewItem(),
+          TopHeadLinesListView(),
         ],
       ),
     );
   }
 }
 
+class TopHeadLinesListView extends StatelessWidget {
+  const TopHeadLinesListView({super.key});
 
-
-
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height:  MediaQuery.sizeOf(context).height * 0.3,
+      child: ListView.separated(
+          itemBuilder: (context, index) => const TopHeadLinesListViewItem(),
+          separatorBuilder: (context, index) => const SizedBox(width: 8,),
+          itemCount: 10,scrollDirection: Axis.horizontal),
+    );
+  }
+}

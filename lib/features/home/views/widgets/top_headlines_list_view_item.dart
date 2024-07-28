@@ -8,9 +8,9 @@ class TopHeadLinesListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.sizeOf(context).height * 0.3,
+      width:  MediaQuery.sizeOf(context).width * 0.85,
       child: Stack(
-        fit: StackFit.expand,
+      fit: StackFit.expand,
         children: [
           Container(
             decoration: BoxDecoration(
@@ -24,6 +24,7 @@ class TopHeadLinesListViewItem extends StatelessWidget {
           ),
           Container(
             decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8),
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:news/core/constants.dart';
 
 class AppBarIcon extends StatelessWidget {
   const AppBarIcon({
@@ -11,16 +12,7 @@ class AppBarIcon extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(14),
       decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              colors: [
-                Color(0xffFF3A44),
-                Color(0xffFF8086),
-              ],
-              begin: Alignment.topLeft
-              ,
-              end: Alignment.bottomRight
-          ),
-
+          gradient: buttonsGradientColor,
           shape: BoxShape.circle),
       child: SvgPicture.asset(
           'assets/images/Group 38.svg',
