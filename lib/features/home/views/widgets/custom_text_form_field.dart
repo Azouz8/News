@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
+import 'package:news/core/constants.dart';
 import 'package:news/core/styles.dart';
 
 class CustomTextFormField extends StatelessWidget {
@@ -10,29 +11,32 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      onTapOutside: (event){
+      onTapOutside: (event) {
         FocusManager.instance.primaryFocus?.unfocus();
       },
       decoration: InputDecoration(
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16,vertical: 0),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(24),
-          borderSide:  BorderSide(
-            color: const Color(0xff818181).withOpacity(0.5),
-          ),
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 0,
         ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(24),
-          borderSide: const BorderSide(
-            color: Color(0xff818181),
-          ),
-        ),
-        hintStyle: Styles.textStyle12SemiBold.copyWith(fontFamily: "Nunito" , fontSize: 16 ,color: Color(0xff818181).withOpacity(0.5)),
+        enabledBorder: buildOutlineInputBorder(),
+        focusedBorder: buildOutlineInputBorder(),
+        hintStyle: Styles.textStyle12SemiBold.copyWith(
+            fontFamily: "Nunito", fontSize: 16, color: appBarCompsColor),
         hintText: "Dogecoin to the Moon...",
-        suffixIcon:  Icon(
+        suffixIcon: Icon(
           FeatherIcons.search,
-          color: const Color(0xff818181).withOpacity(0.5),
+          color: appBarCompsColor,
         ),
+      ),
+    );
+  }
+
+  OutlineInputBorder buildOutlineInputBorder() {
+    return OutlineInputBorder(
+      borderRadius: BorderRadius.circular(24),
+      borderSide: BorderSide(
+        color: appBarCompsColor,
       ),
     );
   }
