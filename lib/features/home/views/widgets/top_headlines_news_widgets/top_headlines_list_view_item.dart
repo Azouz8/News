@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news/core/assets.dart';
-import 'package:news/features/home/views/widgets/custom_stack_info.dart';
+import 'package:news/features/home/views/widgets/top_headlines_news_widgets/custom_stack_info.dart';
 
 class TopHeadLinesListViewItem extends StatelessWidget {
   const TopHeadLinesListViewItem({super.key});

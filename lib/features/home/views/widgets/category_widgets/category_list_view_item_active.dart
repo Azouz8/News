@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:news/core/constants.dart';
 import 'package:news/core/styles.dart';
 
-class CategoryListViewItem extends StatelessWidget {
-  const CategoryListViewItem({super.key});
-
+class CategoryListViewItemActive extends StatelessWidget {
+  const CategoryListViewItemActive({super.key, required this.category});
+  final String category;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -15,7 +15,7 @@ class CategoryListViewItem extends StatelessWidget {
             gradient: buttonsGradientColor,
           ),
           child: Text(
-            "Healthy",
+            category,
             style: Styles.textStyle12SemiBold
                 .copyWith(color: Colors.white, fontSize: 16),
           )),
