@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:news/core/assets.dart';
-import 'package:news/features/home/views/widgets/top_headlines_news_widgets/custom_top_headlines_stack_info.dart';
 
-class TopHeadLinesListViewItem extends StatelessWidget {
-  const TopHeadLinesListViewItem({super.key});
+import 'custom_category_stack_info.dart';
+
+class CategoryListViewItem extends StatelessWidget {
+  const CategoryListViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width:  MediaQuery.sizeOf(context).width * 0.85,
+      height: MediaQuery.sizeOf(context).height * 0.17,
       child: Stack(
-      fit: StackFit.expand,
+        fit: StackFit.expand,
         children: [
           Container(
             decoration: BoxDecoration(
@@ -36,7 +37,7 @@ class TopHeadLinesListViewItem extends StatelessWidget {
               ),
             ),
           ),
-          const CustomTopHeadLinesStackInfo(),
+          const CustomCategoryStackInfo(),
         ],
       ),
     );

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'category_widgets/category_list_view.dart';
+
 import 'app_bar_widgets/custom_app_bar.dart';
+import 'category_widgets/category_header_list_view.dart';
+import 'category_widgets/category_list_view.dart';
 import 'latest_news_header_widgets/custom_header.dart';
 import 'top_headlines_news_widgets/top_headline_list_view.dart';
 
@@ -9,27 +11,26 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomAppBar(),
-          SizedBox(
-            height: 24,
+    return CustomScrollView(
+      slivers: [
+        SliverPadding(
+          padding: const EdgeInsets.all(16),
+          sliver: SliverList(
+            delegate: SliverChildListDelegate(
+              [
+                const CustomAppBar(),
+                const SizedBox(height: 24),
+                const CustomHeader(),
+                const TopHeadLinesListView(),
+                const SizedBox(height: 24),
+                const CategoryHeaderListView(),
+                const SizedBox(height: 16),
+                const CategoryListView(),
+              ],
+            ),
           ),
-          CustomHeader(),
-          TopHeadLinesListView(),
-          SizedBox(
-            height: 24,
-          ),
-          CategoryListView(),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
-
-
-
-
