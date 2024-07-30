@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:news/features/home/views/widgets/category_widgets/category_item.dart';
+import 'package:news/features/home/views/widgets/category_widgets/category_header_item.dart';
 
-class CategoryListView extends StatefulWidget {
-  const CategoryListView({super.key});
+class CategoryHeaderListView extends StatefulWidget {
+  const CategoryHeaderListView({super.key});
 
   @override
-  State<CategoryListView> createState() => _CategoryListViewState();
+  State<CategoryHeaderListView> createState() => _CategoryHeaderListViewState();
 }
 
-class _CategoryListViewState extends State<CategoryListView> {
+class _CategoryHeaderListViewState extends State<CategoryHeaderListView> {
   int activeIndex = 0;
   static List categories = ["Healthy" , "Technology","Finance" , "Arts", "Sports"];
   @override
@@ -24,7 +24,7 @@ class _CategoryListViewState extends State<CategoryListView> {
               });
             }
           },
-          child: CategoryItem(
+          child: CategoryHeaderItem(
             isActive: activeIndex == index, category: categories[index],
           ),
         ),

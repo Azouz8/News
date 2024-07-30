@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:news/core/styles.dart';
 
-class CustomStackInfo extends StatelessWidget {
-  const CustomStackInfo({
+class CustomTopHeadLinesStackInfo extends StatelessWidget {
+  const CustomTopHeadLinesStackInfo({
     super.key,
   });
 
@@ -13,11 +13,13 @@ class CustomStackInfo extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(height: 85,),
+          const SizedBox(
+            height: 85,
+          ),
           Text(
             "by Ryan Browne",
-            style: Styles.textStyle10ExtraBold
-                .copyWith(color: Colors.white, fontFamily: "Nunito", fontSize: 12),
+            style: Styles.textStyle10ExtraBold.copyWith(
+                color: Colors.white, fontFamily: "Nunito", fontSize: 12),
           ),
           Text(
             "Crypto investors should be prepared to lose all their money, BOE governor says",
@@ -30,9 +32,16 @@ class CustomStackInfo extends StatelessWidget {
           Text(
             "“I’m going to say this very bluntly again,” he added. “Buy them only if you’re prepared to lose all your money.”",
             style: Styles.textStyle10Regular.copyWith(
-                color: Colors.white, fontFamily: "Nunito", fontSize: 12 , fontWeight: FontWeight.w500),
+                color: Colors.white,
+                fontFamily: "Nunito",
+                fontSize: 14,
+                fontWeight: FontWeight.w500),
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
           ),
-          const SizedBox(height: 16,)
+          const SizedBox(
+            height: 16,
+          )
         ],
       ),
     );
