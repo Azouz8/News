@@ -19,7 +19,7 @@ class CustomTopHeadLinesStackInfo extends StatelessWidget {
           Text(
             "by Ryan Browne",
             style: Styles.textStyle10ExtraBold.copyWith(
-                color: Colors.white, fontFamily: "Nunito", fontSize: 12),
+                color: Colors.white, fontFamily: "NunitoMed", fontSize: 12),
           ),
           Text(
             "Crypto investors should be prepared to lose all their money, BOE governor says",
@@ -33,7 +33,7 @@ class CustomTopHeadLinesStackInfo extends StatelessWidget {
             "“I’m going to say this very bluntly again,” he added. “Buy them only if you’re prepared to lose all your money.”",
             style: Styles.textStyle10Regular.copyWith(
                 color: Colors.white,
-                fontFamily: "Nunito",
+                fontFamily: "NunitoMed",
                 fontSize: 14,
                 fontWeight: FontWeight.w500),
             maxLines: 2,

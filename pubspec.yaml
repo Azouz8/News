@@ -82,20 +82,12 @@ flutter:
      - family: Nunito
        fonts:
          - asset: assets/fonts/Nunito-VariableFont_wght.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
      - family: New York Small
        fonts:
          - asset: assets/fonts/FontsFree-Net-NewYorkSmallRegular.ttf
-     - family: NunitoBlack
-       fonts:
-         - asset: assets/fonts/Nunito-Black.ttf
      - family: NunitoMed
        fonts:
          - asset: assets/fonts/Nunito-Medium.ttf
-     - family: NunitoBold
-       fonts:
-         - asset: assets/fonts/Nunito-Bold.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
