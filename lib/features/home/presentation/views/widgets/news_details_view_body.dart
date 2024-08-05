@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news/core/assets.dart';
-import 'package:news/features/home/views/widgets/news_details/custom_back_button.dart';
+import 'news_details/custom_back_button.dart';
 import 'news_details/details_blurred_info.dart';
 import 'news_details/details_description.dart';
 

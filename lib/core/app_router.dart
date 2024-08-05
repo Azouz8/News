@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
-import 'package:news/features/home/views/home_view.dart';
-import 'package:news/features/home/views/news_details_view.dart';
+
+import '../features/home/presentation/views/home_view.dart';
+import '../features/home/presentation/views/news_details_view.dart';
 
 abstract class AppRouter{
   static const newsDetailsView = "/newsDetailsView";

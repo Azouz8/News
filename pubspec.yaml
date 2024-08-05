@@ -39,6 +39,8 @@ dependencies:
   flutter_feather_icons: ^2.0.0+1
   flutter_svg: ^2.0.10+1
   font_awesome_flutter: ^10.7.0
+  dio: ^5.5.0+1
+  either_dart: ^1.0.0
 
 dev_dependencies:
   flutter_test:

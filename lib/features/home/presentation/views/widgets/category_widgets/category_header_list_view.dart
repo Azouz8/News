@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:news/features/home/views/widgets/category_widgets/category_header_item.dart';
+
+import 'category_header_item.dart';
 
 class CategoryHeaderListView extends StatefulWidget {
   const CategoryHeaderListView({super.key});
