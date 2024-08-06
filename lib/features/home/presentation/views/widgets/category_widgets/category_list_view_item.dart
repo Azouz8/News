@@ -1,13 +1,15 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:news/core/app_router.dart';
 import 'package:news/core/assets.dart';
+import 'package:news/features/home/data/models/NewsModel.dart';
 
 import 'custom_category_stack_info.dart';
 
 class CategoryListViewItem extends StatelessWidget {
-  const CategoryListViewItem({super.key});
-
+  const CategoryListViewItem({super.key, required this.imgUrl, required this.title, required this.creator, required this.date});
+  final String imgUrl,title,creator,date;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -19,14 +21,12 @@ class CategoryListViewItem extends StatelessWidget {
         child: Stack(
           fit: StackFit.expand,
           children: [
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                image: const DecorationImage(
-                    image: AssetImage(
-                      AssetsData.testImage,
-                    ),
-                    fit: BoxFit.fill),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: CachedNetworkImage(
+                imageUrl: imgUrl,
+                errorWidget: (context, url, error) => const Icon(Icons.error),
+                fit: BoxFit.fill,
               ),
             ),
             Container(
@@ -43,7 +43,7 @@ class CategoryListViewItem extends StatelessWidget {
                 ),
               ),
             ),
-            const CustomCategoryStackInfo(),
+             CustomCategoryStackInfo(title: title,creator: creator,date: date,),
           ],
         ),
       ),

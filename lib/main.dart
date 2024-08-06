@@ -6,6 +6,7 @@ import 'package:news/core/app_router.dart';
 import 'package:news/core/constants.dart';
 import 'package:news/core/service_locator.dart';
 import 'package:news/features/home/data/repos/home_repo_impl.dart';
+import 'package:news/features/home/presentation/manager/news_category_cubit/news_category_cubit.dart';
 import 'package:news/features/home/presentation/manager/top_headlines_cubit/top_headlines_cubit.dart';
 
 void main() {
@@ -13,7 +14,7 @@ void main() {
   runApp(
     DevicePreview(
       enabled: !kReleaseMode,
-      builder: (context) => const MyApp(), // Wrap your app
+      builder: (context) => const MyApp(),
     ),
   );
 }
@@ -21,7 +22,7 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -29,7 +30,11 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) =>
               TopHeadlinesCubit(getIt.get<HomeRepoImpl>())..fetchTopHeadlines(),
-        )
+        ),
+        BlocProvider(
+          create: (context) =>
+          NewsCategoryCubit(getIt.get<HomeRepoImpl>())..fetchNewsCategory(category: "Healthy"),
+        ),
       ],
       child: MaterialApp.router(
         routerConfig: AppRouter.router,

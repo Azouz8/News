@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:news/features/home/data/models/NewsModel.dart';
+import 'package:news/features/home/presentation/manager/news_category_cubit/news_category_cubit.dart';
 
 import 'category_header_item.dart';
+
+int activeIndex = 0;
 
 class CategoryHeaderListView extends StatefulWidget {
   const CategoryHeaderListView({super.key});
@@ -9,9 +14,17 @@ class CategoryHeaderListView extends StatefulWidget {
   State<CategoryHeaderListView> createState() => _CategoryHeaderListViewState();
 }
 
+NewsModel? newsModel;
+
 class _CategoryHeaderListViewState extends State<CategoryHeaderListView> {
-  int activeIndex = 0;
-  static List categories = ["Healthy" , "Technology","Finance" , "Arts", "Sports"];
+  static List categories = [
+    "Healthy",
+    "Technology",
+    "Finance",
+    "Arts",
+    "Sports"
+  ];
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -22,11 +35,14 @@ class _CategoryHeaderListViewState extends State<CategoryHeaderListView> {
             if (activeIndex != index) {
               setState(() {
                 activeIndex = index;
+                BlocProvider.of<NewsCategoryCubit>(context)
+                    .fetchNewsCategory(category: categories[activeIndex]);
               });
             }
           },
           child: CategoryHeaderItem(
-            isActive: activeIndex == index, category: categories[index],
+            isActive: activeIndex == index,
+            category: categories[index],
           ),
         ),
         separatorBuilder: (context, index) => const SizedBox(width: 8),

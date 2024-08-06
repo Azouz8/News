@@ -3,9 +3,9 @@ import 'package:news/core/styles.dart';
 
 class CustomCategoryStackInfo extends StatelessWidget {
   const CustomCategoryStackInfo({
-    super.key,
+    super.key, required this.title, required this.creator, required this.date,
   });
-
+  final String title,creator,date;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -14,7 +14,7 @@ class CustomCategoryStackInfo extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "5 things to know about the 'conundrum' of lupus",
+            title,
             style: Styles.textStyle14SemiBold.copyWith(
                 color: Colors.white,
                 fontFamily: "New York Small",
@@ -24,7 +24,8 @@ class CustomCategoryStackInfo extends StatelessWidget {
           Row(
             children: [
               Text(
-                "Matt Villano",
+                creator.length >20 ? creator.substring(0,20):creator,
+
                 style: Styles.textStyle14SemiBold.copyWith(
                   color: Colors.white,
                   fontFamily: "Nunito",
@@ -32,7 +33,7 @@ class CustomCategoryStackInfo extends StatelessWidget {
               ),
               const Spacer(),
               Text(
-                "Sunday, 9 May 2021",
+                date.substring(0,11),
                 style: Styles.textStyle14SemiBold.copyWith(
                   color: Colors.white,
                   fontFamily: "Nunito",
