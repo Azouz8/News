@@ -22,26 +22,23 @@ class NewsDetailsViewBody extends StatelessWidget {
             alignment: Alignment.topCenter,
           ),
         ),
-        const Positioned(
-          top: 50,
-          left: 15,
-          right: 350,
-          bottom: 770,
-          child: CustomBackButton(),
-        ),
-        const Positioned(
+        Positioned(
           bottom: 0,
           left: 0,
           right: 0,
-          top: 400,
-          child: DetailsDescription(),
+          top: MediaQuery.sizeOf(context).height*0.45,
+          child: const DetailsDescription(),
         ),
-        const Positioned(
-          top: 290,
+         Positioned(
+          top: MediaQuery.sizeOf(context).height*0.32,
           left: 32,
           right: 32,
-          bottom: 410,
-          child: DetailsBlurredInfo(),
+          child: const DetailsBlurredInfo(),
+        ),
+        const Positioned(
+          top: 50,
+          left: 15,
+          child: CustomBackButton(),
         ),
       ],
     );
