@@ -3,9 +3,9 @@ import 'package:news/core/styles.dart';
 
 class CustomTopHeadLinesStackInfo extends StatelessWidget {
   const CustomTopHeadLinesStackInfo({
-    super.key,
+    super.key, required this.author, required this.title, required this.url,
   });
-
+  final String author,title,url;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,12 +17,14 @@ class CustomTopHeadLinesStackInfo extends StatelessWidget {
             height: 85,
           ),
           Text(
-            "by Ryan Browne",
+            author,
             style: Styles.textStyle10ExtraBold.copyWith(
                 color: Colors.white, fontFamily: "NunitoMed", fontSize: 12),
           ),
           Text(
-            "Crypto investors should be prepared to lose all their money, BOE governor says",
+            title,
+            maxLines: 3,
+            overflow: TextOverflow.ellipsis,
             style: Styles.textStyle14Bold.copyWith(
                 fontSize: 19,
                 color: Colors.white,
@@ -30,7 +32,7 @@ class CustomTopHeadLinesStackInfo extends StatelessWidget {
           ),
           const Spacer(),
           Text(
-            "“I’m going to say this very bluntly again,” he added. “Buy them only if you’re prepared to lose all your money.”",
+            url,
             style: Styles.textStyle10Regular.copyWith(
                 color: Colors.white,
                 fontFamily: "NunitoMed",

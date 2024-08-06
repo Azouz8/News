@@ -8,12 +8,15 @@ import 'package:news/core/service_locator.dart';
 import 'package:news/features/home/data/repos/home_repo_impl.dart';
 import 'package:news/features/home/presentation/manager/top_headlines_cubit/top_headlines_cubit.dart';
 
-void main() => runApp(
-      DevicePreview(
-        enabled: !kReleaseMode,
-        builder: (context) => const MyApp(), // Wrap your app
-      ),
-    );
+void main() {
+  setupServiceLocator();
+  runApp(
+    DevicePreview(
+      enabled: !kReleaseMode,
+      builder: (context) => const MyApp(), // Wrap your app
+    ),
+  );
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
