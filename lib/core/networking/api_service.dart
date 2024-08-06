@@ -12,10 +12,10 @@ class ApiService {
     return response.data;
   }
 
-  Future<Map<String, dynamic>> getEverything(
+  Future<Map<String, dynamic>> getCategory(
       {required String q}) async {
     var response = await _dio.get(
-        '${ApiConsts.apiBaseUrl}${ApiConsts.latest}apiKey=${ApiConsts.apiKey}&q=$q&language=en');
+        '${ApiConsts.apiBaseUrl}${ApiConsts.news}apiKey=${ApiConsts.apiKey}&q=$q&language=en');
     return response.data;
   }
 }
