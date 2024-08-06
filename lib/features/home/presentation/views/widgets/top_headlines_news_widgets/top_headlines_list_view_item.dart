@@ -7,9 +7,9 @@ import 'package:news/core/assets.dart';
 import 'custom_top_headlines_stack_info.dart';
 
 class TopHeadLinesListViewItem extends StatelessWidget {
-  const TopHeadLinesListViewItem({super.key, required this.imgUrl, required this.title, required this.author, required this.url});
+  const TopHeadLinesListViewItem({super.key, required this.imgUrl, required this.title, required this.author, required this.description});
 
-  final String imgUrl,title,author,url;
+  final String imgUrl,title,author,description;
 
   @override
   Widget build(BuildContext context) {
@@ -22,16 +22,6 @@ class TopHeadLinesListViewItem extends StatelessWidget {
         child: Stack(
           fit: StackFit.expand,
           children: [
-            // Container(
-            //   decoration: BoxDecoration(
-            //     borderRadius: BorderRadius.circular(8),
-            //     image: const DecorationImage(
-            //         image: AssetImage(
-            //           AssetsData.testImage,
-            //         ),
-            //         fit: BoxFit.fill),
-            //   ),
-            // ),
             ClipRRect(
               borderRadius: BorderRadius.circular(8),
               child: CachedNetworkImage(
@@ -54,7 +44,7 @@ class TopHeadLinesListViewItem extends StatelessWidget {
                 ),
               ),
             ),
-             CustomTopHeadLinesStackInfo(author: author,title: title,url: url,),
+             CustomTopHeadLinesStackInfo(author: author,title: title,url: description,),
           ],
         ),
       ),

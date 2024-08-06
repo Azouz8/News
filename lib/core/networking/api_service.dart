@@ -6,16 +6,16 @@ class ApiService {
 
   ApiService(this._dio);
 
-  Future<Map<String, dynamic>> getHeadlines(
-      {required String country}) async {
+  Future<Map<String, dynamic>> getHeadlines() async {
     var response = await _dio.get(
-        '${ApiConsts.apiBaseUrl}${ApiConsts.topHeadlines}country=$country&apiKey=${ApiConsts.apiKey}');
+        '${ApiConsts.apiBaseUrl}${ApiConsts.latest}&apiKey=${ApiConsts.apiKey}&language=en');
     return response.data;
   }
+
   Future<Map<String, dynamic>> getEverything(
-      {required String q , required String country}) async {
+      {required String q}) async {
     var response = await _dio.get(
-        '${ApiConsts.apiBaseUrl}${ApiConsts.everyThing}q=$q&apiKey=${ApiConsts.apiKey}');
+        '${ApiConsts.apiBaseUrl}${ApiConsts.latest}apiKey=${ApiConsts.apiKey}&q=$q&language=en');
     return response.data;
   }
 }

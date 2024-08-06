@@ -1,7 +1,6 @@
 class ApiConsts{
-  static const String apiBaseUrl = "https://newsapi.org/v2/";
+  static const String apiBaseUrl = "https://newsdata.io/api/1/";
   static const String everyThing = "everything?";
-  static const String topHeadlines = "top-headlines?";
-  static const String country = "us";
-  static const String apiKey = "c67d3a6e475c49eb951fce282d2b2967";
+  static const String latest = "latest?";
+  static const String apiKey = "pub_5022205a7b5ea774f46e4d7c931298757a007";
 }

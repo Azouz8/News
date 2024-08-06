@@ -14,20 +14,20 @@ class TopHeadLinesListView extends StatelessWidget {
     return BlocBuilder<TopHeadlinesCubit, TopHeadlinesState>(
       builder: (context, state) {
         if (state is TopHeadlinesSuccess) {
-          return SizedBox(
+          return state.news.isEmpty?Container(): SizedBox(
             height: MediaQuery.sizeOf(context).height * 0.3,
             child: ListView.separated(
                 itemBuilder: (context, index) => TopHeadLinesListViewItem(
-                      imgUrl: state.news[index].urlToImage ??
+                      imgUrl: state.news[index].imageUrl ??
                           "https://media.istockphoto.com/id/1369150014/vector/breaking-news-with-world-map-background-vector.jpg?s=1024x1024&w=is&k=20&c=blBt3PJbOSEZF5_zB5YgKYeq9Zx_RMOLntX_nI3lliQ=",
                       title: state.news[index].title!,
-                      url: state.news[index].url!,
-                      author: state.news[index].author!,
+                      description: state.news[index].description??"",
+                      author: state.news[index].creator?.first ?? "Unknown",
                     ),
                 separatorBuilder: (context, index) => const SizedBox(
                       width: 8,
                     ),
-                itemCount: 10,
+                itemCount: state.news.length,
                 scrollDirection: Axis.horizontal),
           );
         } else if (state is TopHeadlinesFailure) {
