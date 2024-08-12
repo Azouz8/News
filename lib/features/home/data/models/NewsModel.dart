@@ -1,29 +1,30 @@
 class NewsModel {
   NewsModel({
-      String? articleId,
-      String? title,
-      String? link,
-      dynamic keywords,
-      List<String>? creator,
-      dynamic videoUrl,
-      String? description,
-      String? content,
-      String? pubDate,
-      String? imageUrl,
-      String? sourceId,
-      int? sourcePriority,
-      String? sourceName,
-      String? sourceUrl,
-      String? sourceIcon,
-      String? language,
-      List<String>? country,
-      List<String>? category,
-      String? aiTag,
-      String? sentiment,
-      String? sentimentStats,
-      String? aiRegion,
-      String? aiOrg,
-      bool? duplicate,}){
+    String? articleId,
+    String? title,
+    String? link,
+    dynamic keywords,
+    List<String>? creator,
+    dynamic videoUrl,
+    String? description,
+    String? content,
+    String? pubDate,
+    String? imageUrl,
+    String? sourceId,
+    int? sourcePriority,
+    String? sourceName,
+    String? sourceUrl,
+    String? sourceIcon,
+    String? language,
+    List<String>? country,
+    List<String>? category,
+    String? aiTag,
+    String? sentiment,
+    String? sentimentStats,
+    String? aiRegion,
+    String? aiOrg,
+    bool? duplicate,
+  }) {
     _articleId = articleId;
     _title = title;
     _link = link;
@@ -48,7 +49,7 @@ class NewsModel {
     _aiRegion = aiRegion;
     _aiOrg = aiOrg;
     _duplicate = duplicate;
-}
+  }
 
   NewsModel.fromJson(dynamic json) {
     _articleId = json['article_id'];
@@ -76,6 +77,7 @@ class NewsModel {
     _aiOrg = json['ai_org'];
     _duplicate = json['duplicate'];
   }
+
   String? _articleId;
   String? _title;
   String? _link;
@@ -102,28 +104,51 @@ class NewsModel {
   bool? _duplicate;
 
   String? get articleId => _articleId;
+
   String? get title => _title;
+
   String? get link => _link;
+
   dynamic get keywords => _keywords;
+
   List<String>? get creator => _creator;
+
   dynamic get videoUrl => _videoUrl;
+
   String? get description => _description;
+
   String? get content => _content;
+
   String? get pubDate => _pubDate;
+
   String? get imageUrl => _imageUrl;
+
   String? get sourceId => _sourceId;
+
   int? get sourcePriority => _sourcePriority;
+
   String? get sourceName => _sourceName;
+
   String? get sourceUrl => _sourceUrl;
+
   String? get sourceIcon => _sourceIcon;
+
   String? get language => _language;
+
   List<String>? get country => _country;
+
   List<String>? get category => _category;
+
   String? get aiTag => _aiTag;
+
   String? get sentiment => _sentiment;
+
   String? get sentimentStats => _sentimentStats;
+
   String? get aiRegion => _aiRegion;
+
   String? get aiOrg => _aiOrg;
+
   bool? get duplicate => _duplicate;
 
   Map<String, dynamic> toJson() {
@@ -154,5 +179,4 @@ class NewsModel {
     map['duplicate'] = _duplicate;
     return map;
   }
-
 }

@@ -18,8 +18,10 @@ class CustomBackButton extends StatelessWidget {
             Navigator.pop(context);
           },
           child: Container(
-            padding: const EdgeInsets.only(top: 12, left: 16, bottom: 12, right: 8),
-            color: const Color(0xffd6d6d9).withOpacity(0.5), // Transparent color to allow blur effect
+            padding:
+                const EdgeInsets.only(top: 12, left: 16, bottom: 12, right: 8),
+            color: const Color(0xffd6d6d9).withOpacity(0.5),
+            // Transparent color to allow blur effect
             child: const Icon(Icons.arrow_back_ios),
           ),
         ),

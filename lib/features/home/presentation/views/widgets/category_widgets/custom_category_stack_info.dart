@@ -3,13 +3,18 @@ import 'package:news/core/styles.dart';
 
 class CustomCategoryStackInfo extends StatelessWidget {
   const CustomCategoryStackInfo({
-    super.key, required this.title, required this.creator, required this.date,
+    super.key,
+    required this.title,
+    required this.creator,
+    required this.date,
   });
-  final String title,creator,date;
+
+  final String title, creator, date;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -24,8 +29,7 @@ class CustomCategoryStackInfo extends StatelessWidget {
           Row(
             children: [
               Text(
-                creator.length >20 ? creator.substring(0,20):creator,
-
+                creator.length > 20 ? creator.substring(0, 20) : creator,
                 style: Styles.textStyle14SemiBold.copyWith(
                   color: Colors.white,
                   fontFamily: "Nunito",
@@ -33,7 +37,7 @@ class CustomCategoryStackInfo extends StatelessWidget {
               ),
               const Spacer(),
               Text(
-                date.substring(0,11),
+                date.substring(0, 11),
                 style: Styles.textStyle14SemiBold.copyWith(
                   color: Colors.white,
                   fontFamily: "Nunito",

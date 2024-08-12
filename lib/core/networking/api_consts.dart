@@ -1,4 +1,4 @@
-class ApiConsts{
+class ApiConsts {
   static const String apiBaseUrl = "https://newsdata.io/api/1/";
   static const String latest = "latest?";
   static const String news = "news?";

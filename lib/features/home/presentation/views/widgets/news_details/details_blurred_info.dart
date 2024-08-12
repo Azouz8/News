@@ -5,9 +5,14 @@ import 'package:news/core/styles.dart';
 
 class DetailsBlurredInfo extends StatelessWidget {
   const DetailsBlurredInfo({
-    super.key, required this.title, required this.date, required this.author,
+    super.key,
+    required this.title,
+    required this.date,
+    required this.author,
   });
-  final String date,title,author;
+
+  final String date, title, author;
+
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -16,17 +21,16 @@ class DetailsBlurredInfo extends StatelessWidget {
         filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
         child: Container(
           height: 165,
-          padding:
-          const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
           color: const Color(0xffd6d6d9).withOpacity(0.5),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                date.substring(0,11),
-                style: Styles.textStyle14SemiBold
-                    .copyWith(fontFamily: "Nunito"),
+                date.substring(0, 11),
+                style:
+                    Styles.textStyle14SemiBold.copyWith(fontFamily: "Nunito"),
               ),
               const SizedBox(
                 height: 8,
@@ -44,8 +48,12 @@ class DetailsBlurredInfo extends StatelessWidget {
               ),
               Text(
                 author,
-                style: Styles.textStyle10ExtraBold
-                    .copyWith(fontFamily: "NunitoMed", fontSize: 11),
+                style: Styles.textStyle10ExtraBold.copyWith(
+                  fontFamily: "NunitoMed",
+                  fontSize: 11,
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
             ],
           ),

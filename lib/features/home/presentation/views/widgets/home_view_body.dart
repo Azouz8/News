@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'app_bar_widgets/custom_app_bar.dart';
 import 'category_widgets/category_header_list_view.dart';
 import 'category_widgets/category_list_view.dart';

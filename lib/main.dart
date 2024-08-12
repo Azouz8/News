@@ -22,7 +22,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -32,8 +31,8 @@ class MyApp extends StatelessWidget {
               TopHeadlinesCubit(getIt.get<HomeRepoImpl>())..fetchTopHeadlines(),
         ),
         BlocProvider(
-          create: (context) =>
-          NewsCategoryCubit(getIt.get<HomeRepoImpl>())..fetchNewsCategory(category: "Healthy"),
+          create: (context) => NewsCategoryCubit(getIt.get<HomeRepoImpl>())
+            ..fetchNewsCategory(category: "Healthy"),
         ),
       ],
       child: MaterialApp.router(

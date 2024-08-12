@@ -29,14 +29,14 @@ class NewsDetailsViewBody extends StatelessWidget {
           bottom: 0,
           left: 0,
           right: 0,
-          top: MediaQuery.sizeOf(context).height*0.47,
+          top: MediaQuery.sizeOf(context).height * 0.47,
           child: DetailsDescription(
             description: newsModel.description ?? "",
             link: newsModel.link!,
           ),
         ),
         Positioned(
-          top: MediaQuery.sizeOf(context).height*0.34,
+          top: MediaQuery.sizeOf(context).height * 0.34,
           left: 32,
           right: 32,
           child: DetailsBlurredInfo(

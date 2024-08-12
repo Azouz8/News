@@ -6,12 +6,12 @@ class TopHeadlinesCubit extends Cubit<TopHeadlinesState> {
   TopHeadlinesCubit(this.homeRepo) : super(TopHeadlinesInitial());
   HomeRepo homeRepo;
 
-  Future<void> fetchTopHeadlines()async{
+  Future<void> fetchTopHeadlines() async {
     emit(TopHeadlinesLoading());
     var result = await homeRepo.fetchLatestNews();
-    result.fold((failure){
+    result.fold((failure) {
       emit(TopHeadlinesFailure(failure as String));
-    }, (news){
+    }, (news) {
       emit(TopHeadlinesSuccess(news));
     });
   }

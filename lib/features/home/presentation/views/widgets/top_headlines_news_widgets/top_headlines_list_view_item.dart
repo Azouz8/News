@@ -7,7 +7,10 @@ import 'package:news/features/home/data/models/NewsModel.dart';
 import 'custom_top_headlines_stack_info.dart';
 
 class TopHeadLinesListViewItem extends StatelessWidget {
-  const TopHeadLinesListViewItem({super.key, required this.newsModel, });
+  const TopHeadLinesListViewItem({
+    super.key,
+    required this.newsModel,
+  });
 
   final NewsModel newsModel;
 
@@ -15,7 +18,7 @@ class TopHeadLinesListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.newsDetailsView , extra: newsModel );
+        GoRouter.of(context).push(AppRouter.newsDetailsView, extra: newsModel);
       },
       child: SizedBox(
         width: MediaQuery.sizeOf(context).width * 0.85,
@@ -45,7 +48,11 @@ class TopHeadLinesListViewItem extends StatelessWidget {
                 ),
               ),
             ),
-             CustomTopHeadLinesStackInfo(author: newsModel.creator?.first ?? "Unknown",title: newsModel.title!,url: newsModel.description??"",),
+            CustomTopHeadLinesStackInfo(
+              author: newsModel.creator?.first ?? "Unknown",
+              title: newsModel.title!,
+              url: newsModel.description ?? "",
+            ),
           ],
         ),
       ),

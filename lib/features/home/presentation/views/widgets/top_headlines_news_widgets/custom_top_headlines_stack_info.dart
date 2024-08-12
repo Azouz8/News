@@ -3,9 +3,14 @@ import 'package:news/core/styles.dart';
 
 class CustomTopHeadLinesStackInfo extends StatelessWidget {
   const CustomTopHeadLinesStackInfo({
-    super.key, required this.author, required this.title, required this.url,
+    super.key,
+    required this.author,
+    required this.title,
+    required this.url,
   });
-  final String author,title,url;
+
+  final String author, title, url;
+
   @override
   Widget build(BuildContext context) {
     return Padding(

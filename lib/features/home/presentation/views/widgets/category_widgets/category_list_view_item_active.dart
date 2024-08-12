@@ -4,7 +4,9 @@ import 'package:news/core/styles.dart';
 
 class CategoryListViewItemActive extends StatelessWidget {
   const CategoryListViewItemActive({super.key, required this.category});
+
   final String category;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

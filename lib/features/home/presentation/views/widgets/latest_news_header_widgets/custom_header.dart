@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:news/core/app_router.dart';
 import 'package:news/core/styles.dart';
 
 class CustomHeader extends StatelessWidget {
@@ -11,15 +13,29 @@ class CustomHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-
-        Text("Latest News" , style: Styles.textStyle22Bold.copyWith(fontSize: 18 , fontFamily: "New York Small"),),
+        Text(
+          "Latest News",
+          style: Styles.textStyle22Bold
+              .copyWith(fontSize: 18, fontFamily: "New York Small"),
+        ),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            GoRouter.of(context).push(AppRouter.seeAllView);
+          },
           child: Row(
             children: [
-              Text("See all", style: Styles.textStyle12SemiBold.copyWith(color: Colors.blue , fontSize: 14),),
-              const SizedBox(width: 4,),
-              const Icon(Icons.arrow_forward , color: Colors.blue,),
+              Text(
+                "See all",
+                style: Styles.textStyle12SemiBold
+                    .copyWith(color: Colors.blue, fontSize: 14),
+              ),
+              const SizedBox(
+                width: 4,
+              ),
+              const Icon(
+                Icons.arrow_forward,
+                color: Colors.blue,
+              ),
             ],
           ),
         ),
