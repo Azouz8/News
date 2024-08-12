@@ -5,9 +5,9 @@ import 'package:news/core/styles.dart';
 
 class DetailsBlurredInfo extends StatelessWidget {
   const DetailsBlurredInfo({
-    super.key,
+    super.key, required this.title, required this.date, required this.author,
   });
-
+  final String date,title,author;
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -15,15 +15,16 @@ class DetailsBlurredInfo extends StatelessWidget {
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
         child: Container(
+          height: 165,
           padding:
           const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
           color: const Color(0xffd6d6d9).withOpacity(0.5),
-          // Transparent color to allow blur effect
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Sunday, 9 May 2021",
+                date.substring(0,11),
                 style: Styles.textStyle14SemiBold
                     .copyWith(fontFamily: "Nunito"),
               ),
@@ -31,16 +32,18 @@ class DetailsBlurredInfo extends StatelessWidget {
                 height: 8,
               ),
               Text(
-                "Crypto investors should be prepared to lose all their money, BOE governor says",
+                title,
                 style: Styles.textStyle22Bold.copyWith(
                   fontSize: 18,
                 ),
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
               ),
               const SizedBox(
                 height: 8,
               ),
               Text(
-                "Published by Ryan Browne",
+                author,
                 style: Styles.textStyle10ExtraBold
                     .copyWith(fontFamily: "NunitoMed", fontSize: 11),
               ),

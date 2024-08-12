@@ -18,12 +18,7 @@ class TopHeadLinesListView extends StatelessWidget {
             height: MediaQuery.sizeOf(context).height * 0.3,
             child: ListView.separated(
                 itemBuilder: (context, index) => TopHeadLinesListViewItem(
-                      imgUrl: state.news[index].imageUrl ??
-                          "https://media.istockphoto.com/id/1369150014/vector/breaking-news-with-world-map-background-vector.jpg?s=1024x1024&w=is&k=20&c=blBt3PJbOSEZF5_zB5YgKYeq9Zx_RMOLntX_nI3lliQ=",
-                      title: state.news[index].title!,
-                      description: state.news[index].description??"",
-                      author: state.news[index].creator?.first ?? "Unknown",
-                    ),
+                  newsModel: state.news[index],                    ),
                 separatorBuilder: (context, index) => const SizedBox(
                       width: 8,
                     ),
