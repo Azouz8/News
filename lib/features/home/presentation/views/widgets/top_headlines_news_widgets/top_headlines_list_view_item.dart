@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:news/core/app_router.dart';
+import 'package:news/core/assets.dart';
 import 'package:news/features/home/data/models/NewsModel.dart';
 
 import 'custom_top_headlines_stack_info.dart';
@@ -28,9 +29,11 @@ class TopHeadLinesListViewItem extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(8),
               child: CachedNetworkImage(
-                imageUrl: newsModel.imageUrl ??
-                    "https://media.istockphoto.com/id/1369150014/vector/breaking-news-with-world-map-background-vector.jpg?s=1024x1024&w=is&k=20&c=blBt3PJbOSEZF5_zB5YgKYeq9Zx_RMOLntX_nI3lliQ=",
-                errorWidget: (context, url, error) => const Icon(Icons.error),
+                imageUrl: newsModel.imageUrl ?? AssetsData.networkImg,
+                errorWidget: (context, url, error) => Image.network(
+                  AssetsData.networkImg,
+                  fit: BoxFit.fill,
+                ),
                 fit: BoxFit.fill,
               ),
             ),

@@ -1,12 +1,15 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:news/core/assets.dart';
 import 'package:news/core/styles.dart';
 import 'package:news/features/home/data/models/NewsModel.dart';
 
 class HotUpdatesListViewItem extends StatelessWidget {
   const HotUpdatesListViewItem({
-    super.key, required this.newsModel,
+    super.key,
+    required this.newsModel,
   });
+
   final NewsModel newsModel;
 
   @override
@@ -16,14 +19,17 @@ class HotUpdatesListViewItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          AspectRatio(
-            aspectRatio: 7 / 3,
+          SizedBox(
+            width: double.infinity,
+            height: MediaQuery.sizeOf(context).height * 0.18,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(8),
               child: CachedNetworkImage(
-                imageUrl: newsModel.imageUrl ??
-                    "https://media.istockphoto.com/id/1369150014/vector/breaking-news-with-world-map-background-vector.jpg?s=1024x1024&w=is&k=20&c=blBt3PJbOSEZF5_zB5YgKYeq9Zx_RMOLntX_nI3lliQ=",
-                errorWidget: (context, url, error) => const Icon(Icons.error),
+                imageUrl: newsModel.imageUrl ?? AssetsData.networkImg,
+                errorWidget: (context, url, error) => Image.network(
+                  AssetsData.networkImg,
+                  fit: BoxFit.fill,
+                ),
                 fit: BoxFit.fill,
               ),
             ),
@@ -32,7 +38,7 @@ class HotUpdatesListViewItem extends StatelessWidget {
             height: 16,
           ),
           Text(
-            newsModel.pubDate?.substring(0,11) ?? "Unknown date",
+            newsModel.pubDate?.substring(0, 11) ?? "Unknown date",
             style: Styles.textStyle14Regular.copyWith(
               color: const Color(0xff2E0505),
             ),
@@ -44,7 +50,7 @@ class HotUpdatesListViewItem extends StatelessWidget {
             height: 4,
           ),
           Text(
-            newsModel.title??"",
+            newsModel.title ?? "",
             style: Styles.textStyle14SemiBold
                 .copyWith(fontFamily: "New York Small", fontSize: 16),
           ),
@@ -62,7 +68,7 @@ class HotUpdatesListViewItem extends StatelessWidget {
             height: 8,
           ),
           Text(
-            newsModel.creator?.first?? "Unknown Publisher",
+            newsModel.creator?.first ?? "Unknown Publisher",
             style: Styles.textStyle12Bold
                 .copyWith(fontSize: 13, fontFamily: "NunitoMed"),
           )

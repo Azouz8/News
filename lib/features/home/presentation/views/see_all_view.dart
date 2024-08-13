@@ -27,7 +27,7 @@ class SeeAllView extends StatelessWidget {
           ),
           centerTitle: true,
         ),
-        body:  const SeeAllViewBody(),
+        body: const SeeAllViewBody(),
       ),
     );
   }

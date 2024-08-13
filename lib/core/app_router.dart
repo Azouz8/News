@@ -23,6 +23,9 @@ abstract class AppRouter {
         ),
       ),
     ),
-    GoRoute(path: seeAllView , builder: (context, state) => const SeeAllView(),)
+    GoRoute(
+      path: seeAllView,
+      builder: (context, state) => const SeeAllView(),
+    )
   ]);
 }
