@@ -6,6 +6,7 @@ import 'package:news/core/app_router.dart';
 import 'package:news/core/constants.dart';
 import 'package:news/core/service_locator.dart';
 import 'package:news/features/home/data/repos/home_repo_impl.dart';
+import 'package:news/features/home/presentation/manager/layout_cubit/layout_cubit.dart';
 import 'package:news/features/home/presentation/manager/news_category_cubit/news_category_cubit.dart';
 import 'package:news/features/home/presentation/manager/top_headlines_cubit/top_headlines_cubit.dart';
 
@@ -34,6 +35,10 @@ class MyApp extends StatelessWidget {
           create: (context) => NewsCategoryCubit(getIt.get<HomeRepoImpl>())
             ..fetchNewsCategory(category: "Healthy"),
         ),
+        BlocProvider(
+          create: (context) => LayoutCubit(),
+        ),
+
       ],
       child: MaterialApp.router(
         routerConfig: AppRouter.router,

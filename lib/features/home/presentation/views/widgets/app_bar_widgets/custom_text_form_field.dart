@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:news/core/constants.dart';
 import 'package:news/core/styles.dart';
+import 'package:news/features/home/presentation/manager/layout_cubit/layout_cubit.dart';
 
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
@@ -11,6 +13,9 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onTap: () {
+        BlocProvider.of<LayoutCubit>(context).changeToSearchLayout();
+      },
       onTapOutside: (event) {
         FocusManager.instance.primaryFocus?.unfocus();
       },
