@@ -47,7 +47,7 @@ class CategoryListViewItem extends StatelessWidget {
             ),
             CustomCategoryStackInfo(
               title: newsModel.title!,
-              creator: newsModel.creator?.first ?? "Unknown",
+              creator: newsModel.creator?.first ?? "Unknown Publisher",
               date: newsModel.pubDate!,
             ),
           ],

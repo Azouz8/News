@@ -16,6 +16,7 @@ class HomeRepoImpl extends HomeRepo {
       List<NewsModel> news = [];
       for (var i in data["results"]) {
         news.add(NewsModel.fromJson(i));
+        print(NewsModel.fromJson(i));
       }
       return Right(news);
     } on Exception {
