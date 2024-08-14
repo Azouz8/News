@@ -17,4 +17,10 @@ class ApiService {
         '${ApiConsts.apiBaseUrl}${ApiConsts.news}apiKey=${ApiConsts.apiKey}&q=$q&language=en');
     return response.data;
   }
+
+  Future<Map<String, dynamic>> getSearch({required String q}) async {
+    var response = await _dio.get(
+        '${ApiConsts.apiBaseUrl}${ApiConsts.news}apiKey=${ApiConsts.apiKey}&q=$q&language=en');
+    return response.data;
+  }
 }
