@@ -4,15 +4,17 @@ import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:news/core/constants.dart';
 import 'package:news/core/styles.dart';
 import 'package:news/features/home/presentation/manager/layout_cubit/layout_cubit.dart';
+import 'package:news/features/search/presentation/manager/search_cubit.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField({
+  CustomTextFormField({
     super.key,
   });
-
+  var text = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: text,
       onTap: () {
         BlocProvider.of<LayoutCubit>(context).changeToSearchLayout();
       },
@@ -33,7 +35,13 @@ class CustomTextFormField extends StatelessWidget {
           FeatherIcons.search,
           color: appBarCompsColor,
         ),
+
       ),
+      onChanged: (value) {
+        if(value != ""){
+          BlocProvider.of<SearchNewsCubit>(context).fetchSearchedNews(search: value);
+        }
+      },
     );
   }
 

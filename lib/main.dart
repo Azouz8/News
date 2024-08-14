@@ -9,6 +9,8 @@ import 'package:news/features/home/data/repos/home_repo_impl.dart';
 import 'package:news/features/home/presentation/manager/layout_cubit/layout_cubit.dart';
 import 'package:news/features/home/presentation/manager/news_category_cubit/news_category_cubit.dart';
 import 'package:news/features/home/presentation/manager/top_headlines_cubit/top_headlines_cubit.dart';
+import 'package:news/features/search/data/repos/search_repo_impl.dart';
+import 'package:news/features/search/presentation/manager/search_cubit.dart';
 
 void main() {
   setupServiceLocator();
@@ -37,6 +39,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => LayoutCubit(),
+        ),
+        BlocProvider(
+          create: (context) => SearchNewsCubit(searchRepo: getIt.get<SearchRepoImpl>()),
         ),
 
       ],

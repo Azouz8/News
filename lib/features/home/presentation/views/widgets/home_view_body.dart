@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news/features/home/presentation/manager/layout_cubit/layout_cubit.dart';
 import 'package:news/features/home/presentation/manager/layout_cubit/layout_state.dart';
+import 'package:news/features/search/presentation/views/search_view.dart';
 import 'package:news/features/search/presentation/views/widgets/search_view_body.dart';
 
 import 'app_bar_widgets/custom_app_bar.dart';

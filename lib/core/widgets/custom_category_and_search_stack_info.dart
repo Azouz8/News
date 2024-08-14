@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:news/core/styles.dart';
 
-class CustomCategoryStackInfo extends StatelessWidget {
-  const CustomCategoryStackInfo({
+class CustomCategoryAndSearchStackInfo extends StatelessWidget {
+  const CustomCategoryAndSearchStackInfo({
     super.key,
     required this.title,
     required this.creator,

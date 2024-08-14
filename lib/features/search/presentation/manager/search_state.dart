@@ -3,9 +3,10 @@ import 'package:news/features/home/data/models/NewsModel.dart';
 class SearchNewsState {}
 
 class SearchNewsInitial extends SearchNewsState {}
+class SearchNewsClear extends SearchNewsState {}
 class SearchNewsSuccess extends SearchNewsState {
-  List<NewsModel> books;
-  SearchNewsSuccess(this.books);
+  List<NewsModel> news;
+  SearchNewsSuccess(this.news);
 }
 class SearchNewsFailure extends SearchNewsState {
   String errMessage;

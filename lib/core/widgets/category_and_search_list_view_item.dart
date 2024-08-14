@@ -5,13 +5,13 @@ import 'package:news/core/app_router.dart';
 import 'package:news/core/assets.dart';
 import 'package:news/features/home/data/models/NewsModel.dart';
 
-import 'custom_category_stack_info.dart';
+import 'custom_category_and_search_stack_info.dart';
 
-class CategoryListViewItem extends StatelessWidget {
-  CategoryListViewItem({super.key, required this.newsModel});
+class CategoryAndSearchListViewItem extends StatelessWidget {
+  const CategoryAndSearchListViewItem({super.key, required this.newsModel});
 
   final NewsModel newsModel;
-  String img =
+  final String img =
       "https://media.istockphoto.com/id/1369150014/vector/breaking-news-with-world-map-background-vector.jpg?s=1024x1024&w=is&k=20&c=blBt3PJbOSEZF5_zB5YgKYeq9Zx_RMOLntX_nI3lliQ=";
 
   @override
@@ -50,7 +50,7 @@ class CategoryListViewItem extends StatelessWidget {
                 ),
               ),
             ),
-            CustomCategoryStackInfo(
+            CustomCategoryAndSearchStackInfo(
               title: newsModel.title!,
               creator: newsModel.creator?.first ?? "Unknown Publisher",
               date: newsModel.pubDate!,

@@ -4,7 +4,7 @@ import 'package:news/features/home/presentation/manager/news_category_cubit/news
 import 'package:news/features/home/presentation/manager/news_category_cubit/news_category_state.dart';
 
 import '../../../../../../core/styles.dart';
-import 'category_list_view_item.dart';
+import '../../../../../../core/widgets/category_and_search_list_view_item.dart';
 
 class CategoryListView extends StatelessWidget {
   const CategoryListView({super.key});
@@ -17,7 +17,7 @@ class CategoryListView extends StatelessWidget {
           return ListView.separated(
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
-              itemBuilder: (context, index) => CategoryListViewItem(
+              itemBuilder: (context, index) => CategoryAndSearchListViewItem(
                     newsModel: state.news[index],
                   ),
               separatorBuilder: (context, index) => const SizedBox(height: 8),
