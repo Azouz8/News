@@ -20,6 +20,8 @@ class CustomCategoryStackInfo extends StatelessWidget {
         children: [
           Text(
             title,
+            maxLines: 5,
+            overflow: TextOverflow.ellipsis,
             style: Styles.textStyle14SemiBold.copyWith(
                 color: Colors.white,
                 fontFamily: "New York Small",
