@@ -12,9 +12,9 @@ class LayoutCubit extends Cubit<LayoutState> {
   int currentIndex = 0;
   List<HeroIcon> icons = [
     const HeroIcon(HeroIcons.home),
-    const HeroIcon(HeroIcons.user)
+    const HeroIcon(HeroIcons.cog6Tooth)
   ];
-  List<String> titles = ["Home", "Profile"];
+  List<String> titles = ["Home", "Settings"];
 
   void changeToHomeLayout() {
     emit(LayoutHome());
