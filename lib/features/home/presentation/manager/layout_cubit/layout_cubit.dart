@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:heroicons/heroicons.dart';
 
@@ -12,7 +11,7 @@ class LayoutCubit extends Cubit<LayoutState> {
 
   int currentIndex = 0;
   List<HeroIcon> icons = [
-    const HeroIcon(HeroIcons.home,color: Colors.grey,),
+    const HeroIcon(HeroIcons.home),
     const HeroIcon(HeroIcons.user)
   ];
   List<String> titles = ["Home", "Profile"];

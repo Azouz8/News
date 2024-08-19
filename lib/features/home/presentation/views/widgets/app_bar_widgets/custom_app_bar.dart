@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news/features/home/presentation/manager/layout_cubit/layout_cubit.dart';
 import 'package:news/features/home/presentation/manager/layout_cubit/layout_state.dart';
 
-import '../../../../../search/presentation/manager/search_cubit.dart';
 import 'custom_app_bar_icon.dart';
 import 'custom_text_form_field.dart';
 

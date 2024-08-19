@@ -10,14 +10,14 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(
         child: Stack(children: [
           HomeViewBody(),
-          const Align(
+          Align(
             alignment: Alignment.bottomCenter,
             child: CustomNavBar(),
-          )
+          ),
         ]),
       ),
     );
