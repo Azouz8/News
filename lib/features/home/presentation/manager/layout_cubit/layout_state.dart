@@ -5,3 +5,4 @@ class LayoutHome extends LayoutState{}
 class LayoutSearch extends LayoutState{}
 class LayoutBottomNav extends LayoutState{}
 class LayoutBottomNavIconColorChange extends LayoutState{}
+class NewsChangeAppModeState extends LayoutState{}

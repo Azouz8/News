@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:heroicons/heroicons.dart';
+import 'package:news/core/cache_helper.dart';
 
 import 'layout_state.dart';
 
@@ -31,5 +32,18 @@ class LayoutCubit extends Cubit<LayoutState> {
 
   void changeColor(int index) {
     emit(LayoutBottomNavIconColorChange());
+  }
+
+  bool isDark = false;
+  void changeAppMode({bool? fromShared}) {
+    if (fromShared != null) {
+      isDark = fromShared;
+      emit(NewsChangeAppModeState());
+    } else {
+      isDark = !isDark;
+      CacheHelper.putBoolean(key: "isDark", value: isDark).then((value) {
+        emit(NewsChangeAppModeState());
+      });
+    }
   }
 }
