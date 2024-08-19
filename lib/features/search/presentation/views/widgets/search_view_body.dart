@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news/core/widgets/category_and_search_list_view_item.dart';
 import 'package:news/features/search/presentation/manager/search_cubit.dart';
 import 'package:news/features/search/presentation/manager/search_state.dart';
-
 import '../../../../../core/styles.dart';
 
 class SearchViewBody extends StatelessWidget {

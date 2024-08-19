@@ -1,14 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:news/features/home/presentation/views/widgets/nav_bar_widget/custom_nav_bar.dart';
 
 import 'widgets/home_view_body.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView({super.key,});
+  const HomeView({
+    super.key,
+  });
+
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: SafeArea(
-        child: HomeViewBody(),
+        child: Stack(children: [
+          HomeViewBody(),
+          const Align(
+            alignment: Alignment.bottomCenter,
+            child: CustomNavBar(),
+          )
+        ]),
       ),
     );
   }
