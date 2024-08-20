@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news/core/app_router.dart';
+import 'package:news/core/cache_helper.dart';
 import 'package:news/core/constants.dart';
 import 'package:news/core/service_locator.dart';
 import 'package:news/features/home/data/repos/home_repo_impl.dart';
@@ -11,11 +14,11 @@ import 'package:news/features/home/presentation/manager/top_headlines_cubit/top_
 import 'package:news/features/search/data/repos/search_repo_impl.dart';
 import 'package:news/features/search/presentation/manager/search_cubit.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   setupServiceLocator();
-  runApp(
-    const MyApp(),
-  );
+  await CacheHelper.init();
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -37,9 +40,9 @@ class MyApp extends StatelessWidget {
           create: (context) => LayoutCubit(),
         ),
         BlocProvider(
-          create: (context) => SearchNewsCubit(searchRepo: getIt.get<SearchRepoImpl>()),
+          create: (context) =>
+              SearchNewsCubit(searchRepo: getIt.get<SearchRepoImpl>()),
         ),
-
       ],
       child: MaterialApp.router(
         routerConfig: AppRouter.router,

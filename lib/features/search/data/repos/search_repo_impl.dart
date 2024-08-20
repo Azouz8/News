@@ -16,7 +16,6 @@ class SearchRepoImpl implements SearchRepo {
       var data = await apiService.getCategory(q: search);
       List<NewsModel> news = [];
       for (var i in data["results"]) {
-        print(NewsModel.fromJson(i));
         news.add(NewsModel.fromJson(i));
       }
       return Right(news);

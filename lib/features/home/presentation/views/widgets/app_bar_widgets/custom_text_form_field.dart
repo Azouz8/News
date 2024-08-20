@@ -7,10 +7,10 @@ import 'package:news/features/home/presentation/manager/layout_cubit/layout_cubi
 import 'package:news/features/search/presentation/manager/search_cubit.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  CustomTextFormField({
-    super.key,
-  });
-  var text = TextEditingController();
+  CustomTextFormField({super.key});
+
+  final TextEditingController text = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return TextField(
@@ -35,11 +35,11 @@ class CustomTextFormField extends StatelessWidget {
           FeatherIcons.search,
           color: appBarCompsColor,
         ),
-
       ),
       onChanged: (value) {
-        if(value != ""){
-          BlocProvider.of<SearchNewsCubit>(context).fetchSearchedNews(search: value);
+        if (value != "") {
+          BlocProvider.of<SearchNewsCubit>(context)
+              .fetchSearchedNews(search: value);
         }
       },
     );
