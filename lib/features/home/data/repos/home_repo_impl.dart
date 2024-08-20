@@ -10,9 +10,9 @@ class HomeRepoImpl extends HomeRepo {
   HomeRepoImpl(this.apiService);
 
   @override
-  Future<Either<Failures, List<NewsModel>>> fetchLatestNews() async {
+  Future<Either<Failures, List<NewsModel>>> fetchLatestNews({required String country}) async {
     try {
-      var data = await apiService.getHeadlines();
+      var data = await apiService.getHeadlines(country: country);
       List<NewsModel> news = [];
       for (var i in data["results"]) {
         news.add(NewsModel.fromJson(i));
@@ -25,9 +25,9 @@ class HomeRepoImpl extends HomeRepo {
 
   @override
   Future<Either<Failures, List<NewsModel>>> fetchNewsCategory(
-      {required String category}) async {
+      {required String category, required String country}) async {
     try {
-      var data = await apiService.getCategory(q: category);
+      var data = await apiService.getCategory(q: category,country: country);
       List<NewsModel> news = [];
       for (var i in data["results"]) {
         news.add(NewsModel.fromJson(i));

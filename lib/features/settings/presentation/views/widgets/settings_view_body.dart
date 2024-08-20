@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:news/core/theme_data_menu_item.dart';
-import 'package:news/features/settings/presentation/views/widgets/county_menu_widget.dart';
+import 'package:news/features/settings/presentation/views/widgets/country_menu_widget.dart';
 import 'package:news/features/settings/presentation/views/widgets/theme_menu_widget.dart';
 
 class SettingsViewBody extends StatelessWidget {
-  SettingsViewBody({super.key});
+  const SettingsViewBody({super.key});
 
 
 
@@ -17,7 +16,7 @@ class SettingsViewBody extends StatelessWidget {
         children: [
           ThemeMenu(),
           const SizedBox(height: 16,),
-          CountyMenu()
+          CountryMenu()
         ],
       ),
     );

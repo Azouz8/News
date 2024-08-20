@@ -18,23 +18,26 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setupServiceLocator();
   await CacheHelper.init();
-  runApp(const MyApp());
+  String? country = CacheHelper.getString(key: "country");
+  print("countryyyyyyyyyyyyyyyyyyyyy");
+  print(country);
+  runApp(MyApp(country: country??'us',));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+  const MyApp({super.key, required this.country});
+  final String country;
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
           create: (context) =>
-              TopHeadlinesCubit(getIt.get<HomeRepoImpl>())..fetchTopHeadlines(),
+              TopHeadlinesCubit(getIt.get<HomeRepoImpl>())..fetchTopHeadlines(country: country),
         ),
         BlocProvider(
           create: (context) => NewsCategoryCubit(getIt.get<HomeRepoImpl>())
-            ..fetchNewsCategory(category: "Healthy"),
+            ..fetchNewsCategory(category: "Healthy",country: country),
         ),
         BlocProvider(
           create: (context) => LayoutCubit(),

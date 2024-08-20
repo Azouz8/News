@@ -6,10 +6,10 @@ class CustomTopHeadLinesStackInfo extends StatelessWidget {
     super.key,
     required this.author,
     required this.title,
-    required this.url,
+    required this.description,
   });
 
-  final String author, title, url;
+  final String author, title, description;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +23,8 @@ class CustomTopHeadLinesStackInfo extends StatelessWidget {
           ),
           Text(
             author,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             style: Styles.textStyle10ExtraBold.copyWith(
                 color: Colors.white, fontFamily: "NunitoMed", fontSize: 12),
           ),
@@ -37,7 +39,7 @@ class CustomTopHeadLinesStackInfo extends StatelessWidget {
           ),
           const Spacer(),
           Text(
-            url,
+            description,
             style: Styles.textStyle10Regular.copyWith(
                 color: Colors.white,
                 fontFamily: "NunitoMed",

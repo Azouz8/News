@@ -21,7 +21,7 @@ class CategoryListView extends StatelessWidget {
                     newsModel: state.news[index],
                   ),
               separatorBuilder: (context, index) => const SizedBox(height: 8),
-              itemCount: 10);
+              itemCount: state.news.length);
         } else if (state is NewsCategoryFailure) {
           return Center(
               child: Text(

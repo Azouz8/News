@@ -6,5 +6,5 @@ import 'package:either_dart/either.dart';
 
 abstract class SearchRepo {
   Future<Either<Failures, List<NewsModel>>> fetchSearchedNews(
-      {required String search});
+      {required String search,required String country});
 }

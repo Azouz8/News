@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:news/core/cache_helper.dart';
 import 'package:news/features/home/data/models/NewsModel.dart';
 import 'package:news/features/home/presentation/manager/news_category_cubit/news_category_cubit.dart';
 
@@ -36,7 +37,7 @@ class _CategoryHeaderListViewState extends State<CategoryHeaderListView> {
               setState(() {
                 activeIndex = index;
                 BlocProvider.of<NewsCategoryCubit>(context)
-                    .fetchNewsCategory(category: categories[activeIndex]);
+                    .fetchNewsCategory(category: categories[activeIndex] , country: CacheHelper.getString(key: "country")?? 'us');
               });
             }
           },

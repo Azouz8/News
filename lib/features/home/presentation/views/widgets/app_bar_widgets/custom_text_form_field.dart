@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
+import 'package:news/core/cache_helper.dart';
 import 'package:news/core/constants.dart';
 import 'package:news/core/styles.dart';
 import 'package:news/features/home/presentation/manager/layout_cubit/layout_cubit.dart';
@@ -39,7 +40,7 @@ class CustomTextFormField extends StatelessWidget {
       onChanged: (value) {
         if (value != "") {
           BlocProvider.of<SearchNewsCubit>(context)
-              .fetchSearchedNews(search: value);
+              .fetchSearchedNews(search: value,country: CacheHelper.getString(key: "country")?? 'us');
         }
       },
     );

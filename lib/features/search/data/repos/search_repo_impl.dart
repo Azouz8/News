@@ -11,9 +11,9 @@ class SearchRepoImpl implements SearchRepo {
 
   @override
   Future<Either<Failures, List<NewsModel>>> fetchSearchedNews(
-      {required String search}) async {
+      {required String search, required String country}) async {
     try {
-      var data = await apiService.getCategory(q: search);
+      var data = await apiService.getCategory(q: search, country: country);
       List<NewsModel> news = [];
       for (var i in data["results"]) {
         news.add(NewsModel.fromJson(i));

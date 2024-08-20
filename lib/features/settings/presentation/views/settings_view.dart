@@ -23,7 +23,7 @@ class SettingsView extends StatelessWidget {
           ),
           centerTitle: true,
         ),
-        body: SettingsViewBody(),
+        body: const SettingsViewBody(),
       ),
     );
   }

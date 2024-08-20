@@ -7,9 +7,9 @@ class SearchNewsCubit extends Cubit<SearchNewsState> {
   SearchNewsCubit({required this.searchRepo}) : super(SearchNewsInitial());
   SearchRepo searchRepo;
 
-  Future<void> fetchSearchedNews({required String search}) async {
+  Future<void> fetchSearchedNews({required String search, required String country}) async {
     emit(SearchNewsLoading());
-    var result = await searchRepo.fetchSearchedNews(search: search);
+    var result = await searchRepo.fetchSearchedNews(search: search,country: country);
     result.fold((failure) {
       emit(SearchNewsFailure(failure as String));
     }, (search) {

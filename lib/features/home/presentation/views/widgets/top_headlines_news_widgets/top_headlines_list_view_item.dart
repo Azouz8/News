@@ -54,7 +54,7 @@ class TopHeadLinesListViewItem extends StatelessWidget {
             CustomTopHeadLinesStackInfo(
               author: newsModel.creator?.first ?? "Unknown",
               title: newsModel.title!,
-              url: newsModel.description ?? "",
+              description: newsModel.description ?? "",
             ),
           ],
         ),
