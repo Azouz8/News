@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,8 +18,6 @@ Future<void> main() async {
   setupServiceLocator();
   await CacheHelper.init();
   String? country = CacheHelper.getString(key: "country");
-  print("countryyyyyyyyyyyyyyyyyyyyy");
-  print(country);
   runApp(MyApp(country: country??'us',));
 }
 
