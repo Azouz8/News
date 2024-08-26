@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news/core/widgets/category_and_search_list_view_item.dart';
 import 'package:news/features/search/presentation/manager/search_cubit.dart';
 import 'package:news/features/search/presentation/manager/search_state.dart';
-import '../../../../../core/styles.dart';
 
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({
@@ -29,7 +28,7 @@ class SearchViewBody extends StatelessWidget {
           return Center(
               child: Text(
             state.errMessage,
-            style: Styles.textStyle14SemiBold,
+            style: Theme.of(context).textTheme.titleSmall,
             textAlign: TextAlign.center,
           ));
         } else if (state is SearchNewsLoading) {

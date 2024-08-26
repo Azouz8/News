@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:news/core/constants.dart';
-import 'package:news/core/styles.dart';
 
 class CategoryListViewItemActive extends StatelessWidget {
   const CategoryListViewItemActive({super.key, required this.category});
@@ -18,7 +17,7 @@ class CategoryListViewItemActive extends StatelessWidget {
           ),
           child: Text(
             category,
-            style: Styles.textStyle12SemiBold
+            style: Theme.of(context).textTheme.titleMedium!
                 .copyWith(color: Colors.white, fontSize: 16),
           )),
     );

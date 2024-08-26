@@ -23,8 +23,6 @@ class CustomNavBar extends StatelessWidget {
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withAlpha(29),
-                  blurRadius: 20,
-                  spreadRadius: 10,
                 ),
               ],
             ),
@@ -42,7 +40,6 @@ class CustomNavBar extends StatelessWidget {
                     GoRouter.of(context).push(AppRouter.settingsView);
                   }
                 },
-                selectedItemColor: Colors.blue,
                 items: [
                   BottomNavigationBarItem(
                       icon: cubit.icons[0], label: cubit.titles[0]),

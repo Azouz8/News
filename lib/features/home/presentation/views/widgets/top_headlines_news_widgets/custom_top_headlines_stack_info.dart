@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:news/core/styles.dart';
 
 class CustomTopHeadLinesStackInfo extends StatelessWidget {
   const CustomTopHeadLinesStackInfo({
@@ -25,27 +24,27 @@ class CustomTopHeadLinesStackInfo extends StatelessWidget {
             author,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: Styles.textStyle10ExtraBold.copyWith(
-                color: Colors.white, fontFamily: "NunitoMed", fontSize: 12),
+            style: Theme.of(context).textTheme.displaySmall!.copyWith(
+                fontFamily: "NunitoMed", fontSize: 12, color: Colors.white),
           ),
+          const SizedBox(height: 4,),
           Text(
             title,
             maxLines: 3,
             overflow: TextOverflow.ellipsis,
-            style: Styles.textStyle14Bold.copyWith(
-                fontSize: 19,
-                color: Colors.white,
-                fontFamily: "New York Small"),
+            style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                fontFamily: "New York Small",color: Colors.white),
           ),
           const Spacer(),
           Text(
             description,
-            style: Styles.textStyle10Regular.copyWith(
-                color: Colors.white,
+            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                 fontFamily: "NunitoMed",
                 fontSize: 14,
+                color: Colors.white,
                 fontWeight: FontWeight.w500),
             maxLines: 2,
+
             overflow: TextOverflow.ellipsis,
           ),
           const SizedBox(

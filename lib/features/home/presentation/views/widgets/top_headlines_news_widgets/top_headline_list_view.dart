@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news/core/styles.dart';
 import 'package:news/features/home/presentation/manager/top_headlines_cubit/top_headlines_cubit.dart';
 import 'package:news/features/home/presentation/manager/top_headlines_cubit/top_headlines_state.dart';
 import 'package:news/features/home/presentation/views/widgets/top_headlines_news_widgets/latest_news_loading_widget.dart';
@@ -33,7 +32,7 @@ class TopHeadLinesListView extends StatelessWidget {
           return Center(
               child: Text(
             state.errMessage,
-            style: Styles.textStyle14SemiBold,
+            style: Theme.of(context).textTheme.titleSmall,
             textAlign: TextAlign.center,
           ));
         } else {

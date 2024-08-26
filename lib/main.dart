@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news/core/app_router.dart';
 import 'package:news/core/cache_helper.dart';
-import 'package:news/core/constants.dart';
 import 'package:news/core/service_locator.dart';
+import 'package:news/core/themes/dark_theme/dark_theme.dart';
 import 'package:news/features/home/data/repos/home_repo_impl.dart';
 import 'package:news/features/home/presentation/manager/layout_cubit/layout_cubit.dart';
 import 'package:news/features/home/presentation/manager/news_category_cubit/news_category_cubit.dart';
@@ -49,9 +49,10 @@ class MyApp extends StatelessWidget {
         locale: DevicePreview.locale(context),
         builder: DevicePreview.appBuilder,
         debugShowCheckedModeBanner: false,
-        theme: ThemeData.light().copyWith(
-          scaffoldBackgroundColor: scaffoldColor,
-        ),
+        // theme: ThemeData.light().copyWith(
+        //   scaffoldBackgroundColor: scaffoldColor,
+        // ),
+        theme: getDarkTheme(),
       ),
     );
   }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:news/core/app_router.dart';
-import 'package:news/core/styles.dart';
 
 class CustomHeader extends StatelessWidget {
   const CustomHeader({
@@ -15,8 +14,8 @@ class CustomHeader extends StatelessWidget {
       children: [
         Text(
           "Latest News",
-          style: Styles.textStyle22Bold
-              .copyWith(fontSize: 18, fontFamily: "New York Small"),
+          style: Theme.of(context).textTheme.headlineMedium!
+              .copyWith(fontFamily: "New York Small"),
         ),
         TextButton(
           onPressed: () {
@@ -26,8 +25,8 @@ class CustomHeader extends StatelessWidget {
             children: [
               Text(
                 "See all",
-                style: Styles.textStyle12SemiBold
-                    .copyWith(color: Colors.blue, fontSize: 14),
+                style: Theme.of(context).textTheme.titleSmall!
+                    .copyWith(color: Colors.blue),
               ),
               const SizedBox(
                 width: 4,

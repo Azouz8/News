@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:news/core/styles.dart';
 
 class CategoryListViewItemInactive extends StatelessWidget {
   const CategoryListViewItemInactive({super.key, required this.category});
@@ -13,7 +12,6 @@ class CategoryListViewItemInactive extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            // gradient: buttonsGradientColor,
             border: Border.all(
               color: Colors.grey.shade300,
               width: 1.0,
@@ -21,8 +19,7 @@ class CategoryListViewItemInactive extends StatelessWidget {
           ),
           child: Text(
             category,
-            style: Styles.textStyle12SemiBold
-                .copyWith(color: Colors.black, fontSize: 16),
+            style: Theme.of(context).textTheme.titleMedium!.copyWith(color: Colors.grey)
           )),
     );
   }

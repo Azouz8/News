@@ -11,7 +11,7 @@ class NewsCategoryCubit extends Cubit<NewsCategoryState> {
     emit(NewsCategoryLoading());
     var result = await homeRepo.fetchNewsCategory(category: category,country: country);
     result.fold((failure) {
-      emit(NewsCategoryFailure(failure as String));
+      emit(NewsCategoryFailure(failure.toString()));
     }, (news) {
       emit(NewsCategorySuccess(news));
     });

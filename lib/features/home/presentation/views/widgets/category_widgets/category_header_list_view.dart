@@ -26,6 +26,7 @@ class _CategoryHeaderListViewState extends State<CategoryHeaderListView> {
     "Sports"
   ];
 
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(

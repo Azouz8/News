@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:news/core/styles.dart';
 
 class DetailsBlurredInfo extends StatelessWidget {
   const DetailsBlurredInfo({
@@ -20,7 +19,7 @@ class DetailsBlurredInfo extends StatelessWidget {
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
         child: Container(
-          height: 165,
+          height: 167,
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
           color: const Color(0xffd6d6d9).withOpacity(0.5),
           child: Column(
@@ -29,17 +28,17 @@ class DetailsBlurredInfo extends StatelessWidget {
             children: [
               Text(
                 date.substring(0, 11),
-                style:
-                    Styles.textStyle14SemiBold.copyWith(fontFamily: "Nunito"),
+                style: Theme.of(context)
+                    .textTheme
+                    .titleSmall!
+                    .copyWith(fontFamily: "Nunito"),
               ),
               const SizedBox(
                 height: 8,
               ),
               Text(
                 title,
-                style: Styles.textStyle22Bold.copyWith(
-                  fontSize: 18,
-                ),
+                style: Theme.of(context).textTheme.headlineMedium,
                 maxLines: 3,
                 overflow: TextOverflow.ellipsis,
               ),
@@ -48,10 +47,10 @@ class DetailsBlurredInfo extends StatelessWidget {
               ),
               Text(
                 author,
-                style: Styles.textStyle10ExtraBold.copyWith(
-                  fontFamily: "NunitoMed",
-                  fontSize: 11,
-                ),
+                style: Theme.of(context)
+                    .textTheme
+                    .displaySmall!
+                    .copyWith(fontFamily: "NunitoMed"),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),

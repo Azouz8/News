@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:news/core/styles.dart';
 
 import 'widgets/see_all_view_widgets/see_all_view_body.dart';
 
@@ -20,10 +19,10 @@ class SeeAllView extends StatelessWidget {
           ),
           title: Text(
             "Hot Updated",
-            style: Styles.textStyle14SemiBold.copyWith(
-              fontSize: 18,
-              foreground: Paint()..shader = linearGradient,
-            ),
+            style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                  fontSize: 18,
+                  foreground: Paint()..shader = linearGradient,
+                ),
           ),
           centerTitle: true,
         ),

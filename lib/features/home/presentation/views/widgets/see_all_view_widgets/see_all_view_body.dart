@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../../core/styles.dart';
 import '../../../manager/top_headlines_cubit/top_headlines_cubit.dart';
 import '../../../manager/top_headlines_cubit/top_headlines_state.dart';
 import 'hot_updates_list_view_item.dart';
@@ -28,7 +27,7 @@ class SeeAllViewBody extends StatelessWidget {
           return Center(
               child: Text(
             state.errMessage,
-            style: Styles.textStyle14SemiBold,
+            style: Theme.of(context).textTheme.titleSmall,
             textAlign: TextAlign.center,
           ));
         } else {

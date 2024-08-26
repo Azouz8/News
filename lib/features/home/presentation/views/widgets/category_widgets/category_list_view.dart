@@ -4,7 +4,6 @@ import 'package:news/features/home/presentation/manager/news_category_cubit/news
 import 'package:news/features/home/presentation/manager/news_category_cubit/news_category_state.dart';
 import 'package:news/features/home/presentation/views/widgets/category_widgets/news_category_loading_widget.dart';
 
-import '../../../../../../core/styles.dart';
 import '../../../../../../core/widgets/category_and_search_list_view_item.dart';
 
 class CategoryListView extends StatelessWidget {
@@ -27,7 +26,7 @@ class CategoryListView extends StatelessWidget {
           return Center(
               child: Text(
             state.errMessage,
-            style: Styles.textStyle14SemiBold,
+            style: Theme.of(context).textTheme.titleSmall,
             textAlign: TextAlign.center,
           ));
         } else {

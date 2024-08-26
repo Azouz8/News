@@ -10,7 +10,7 @@ class TopHeadlinesCubit extends Cubit<TopHeadlinesState> {
     emit(TopHeadlinesLoading());
     var result = await homeRepo.fetchLatestNews(country: country);
     result.fold((failure) {
-      emit(TopHeadlinesFailure(failure as String));
+      emit(TopHeadlinesFailure(failure.toString()));
     }, (news) {
       emit(TopHeadlinesSuccess(news));
     });

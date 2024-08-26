@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:news/core/styles.dart';
 
 class DetailsDescription extends StatelessWidget {
   const DetailsDescription({
@@ -19,27 +18,29 @@ class DetailsDescription extends StatelessWidget {
         child: Container(
           padding:
               const EdgeInsets.only(right: 16, left: 16, bottom: 16, top: 70),
-          decoration: const BoxDecoration(
-              borderRadius: BorderRadius.only(
+          decoration:  BoxDecoration(
+              borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(30),
                 topRight: Radius.circular(30),
               ),
-              color: Colors.white),
+            color:Theme.of(context).scaffoldBackgroundColor
+              ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 description,
-                style: Styles.textStyle14Regular.copyWith(
+                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                   fontSize: 18,
                   fontFamily: "NunitoMed",
                   height: 1.5,
                   wordSpacing: 1.5,
                 ),
               ),
+              const SizedBox(height: 8,),
               Text(
                 "Tab to see more...",
-                style: Styles.textStyle14Regular.copyWith(
+                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                   fontSize: 18,
                   decoration: TextDecoration.underline,
                   decorationColor: Colors.blue,
