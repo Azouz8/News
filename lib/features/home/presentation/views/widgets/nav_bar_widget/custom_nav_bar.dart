@@ -22,7 +22,10 @@ class CustomNavBar extends StatelessWidget {
               borderRadius: BorderRadius.circular(50),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withAlpha(29),
+                  color: Colors.black.withAlpha(30),
+                  // blurRadius: 10,
+                  // spreadRadius: 5,
+                  // blurStyle: BlurStyle.inner
                 ),
               ],
             ),

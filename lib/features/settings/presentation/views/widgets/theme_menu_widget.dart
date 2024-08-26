@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news/core/theme_data_menu_item.dart';
+import 'package:news/features/home/presentation/manager/layout_cubit/layout_cubit.dart';
+
+import '../../../../../core/cache_helper.dart';
 
 class ThemeMenu extends StatelessWidget {
   ThemeMenu({super.key});
@@ -10,9 +14,9 @@ class ThemeMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return DropdownMenu<ThemeDataMenuItem>(
       textStyle: const TextStyle(fontSize: 20),
-      menuStyle: MenuStyle(
-        backgroundColor: WidgetStateProperty.all<Color>(Colors.grey.shade50),
-      ),
+      initialSelection: CacheHelper.getBoolean(key: "isDark") == true
+          ? ThemeDataMenuItem(theme: "Dark")
+          : ThemeDataMenuItem(theme: "Light"),
       width: MediaQuery.sizeOf(context).width * 0.9,
       controller: menuController,
       label: const Text("Theme"),
@@ -31,7 +35,9 @@ class ThemeMenu extends StatelessWidget {
         ),
       ],
       onSelected: (value) {
-        print(value?.theme);
+        CacheHelper.putBoolean(key: "isDark", value:  value!.theme == "Dark" ? true : false);
+        BlocProvider.of<LayoutCubit>(context)
+            .changeAppMode(dark: value.theme == "Dark" ? true : false);
       },
     );
   }

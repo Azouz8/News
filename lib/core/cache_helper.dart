@@ -24,4 +24,8 @@ class CacheHelper {
   static String? getString({required String key}) {
     return sharedPreferences!.getString(key);
   }
+
+  static void remove({required String key}){
+    sharedPreferences!.remove(key);
+  }
 }

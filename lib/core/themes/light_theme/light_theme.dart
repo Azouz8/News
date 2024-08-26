@@ -20,7 +20,9 @@ ThemeData getLightTheme() => ThemeData(
         ),
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+        backgroundColor: Colors.white70,
         selectedIconTheme: IconThemeData(color: Color(0xffff5d65)),
-          selectedItemColor:  Color(0xffff5d65)
+          selectedItemColor:  Color(0xffff5d65),
+
       ),
     );

@@ -15,9 +15,6 @@ class CountryMenu extends StatelessWidget {
     return DropdownMenu<CountryMenuItem>(
       textStyle: const TextStyle(fontSize: 20),
       initialSelection: CountryMenuItem(country: CacheHelper.getString(key: 'country')!), // This sets Egypt as the initial selection
-      menuStyle: MenuStyle(
-        backgroundColor: WidgetStateProperty.all<Color>(Colors.grey.shade50),
-      ),
       width: MediaQuery.sizeOf(context).width * 0.9,
       controller: countryController,
       label: const Text("Country"),
@@ -37,7 +34,6 @@ class CountryMenu extends StatelessWidget {
       ],
       onSelected: (value) {
         CacheHelper.putString(key: "country", value: value!.country);
-        print(CacheHelper.getString(key: 'country'));
         BlocProvider.of<TopHeadlinesCubit>(context).fetchTopHeadlines(country: CacheHelper.getString(key: 'country')!);
         BlocProvider.of<NewsCategoryCubit>(context).fetchNewsCategory(country: CacheHelper.getString(key: 'country')!, category: 'Healthy');
       },

@@ -11,12 +11,11 @@ class SettingsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PopScope(
-      onPopInvoked: (didPop) {
+      onPopInvokedWithResult: (didPop, result) {
         BlocProvider.of<LayoutCubit>(context).changeIndex(0);
       },
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: AppColorsDark.scaffoldBackgroundColor,
           title: Text(
             "Settings",
             style: Theme.of(context).textTheme.titleMedium!

@@ -35,9 +35,9 @@ class LayoutCubit extends Cubit<LayoutState> {
   }
 
   bool isDark = false;
-  void changeAppMode({bool? fromShared}) {
-    if (fromShared != null) {
-      isDark = fromShared;
+  void changeAppMode({bool? dark}) {
+    if (dark != null) {
+      isDark = dark;
       emit(NewsChangeAppModeState());
     } else {
       isDark = !isDark;
