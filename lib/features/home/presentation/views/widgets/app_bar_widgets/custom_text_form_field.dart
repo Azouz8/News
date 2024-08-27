@@ -17,6 +17,7 @@ class CustomTextFormField extends StatelessWidget {
       controller: text,
       onTap: () {
         BlocProvider.of<LayoutCubit>(context).changeToSearchLayout();
+        BlocProvider.of<SearchNewsCubit>(context).clearList();
       },
       onTapOutside: (event) {
         FocusManager.instance.primaryFocus?.unfocus();

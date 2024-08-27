@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news/core/functions/url_launcher.dart';
 
 class DetailsDescription extends StatelessWidget {
   const DetailsDescription({
@@ -38,16 +39,21 @@ class DetailsDescription extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 8,),
-              Text(
-                "Tab to see more...",
-                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                  fontSize: 18,
-                  decoration: TextDecoration.underline,
-                  decorationColor: Colors.blue,
-                  color: Colors.blue,
-                  fontFamily: "NunitoMed",
-                  height: 1.5,
-                  wordSpacing: 1.5,
+              GestureDetector(
+                onTap: () async{
+                  launchURL(context, link);
+                },
+                child: Text(
+                  "Tab to see more...",
+                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                    fontSize: 18,
+                    decoration: TextDecoration.underline,
+                    decorationColor: Colors.blue,
+                    color: Colors.blue,
+                    fontFamily: "NunitoMed",
+                    height: 1.5,
+                    wordSpacing: 1.5,
+                  ),
                 ),
               ),
             ],

@@ -10,6 +10,7 @@ class SeeAllView extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          scrolledUnderElevation: 0,
           backgroundColor: Colors.transparent,
           leading: IconButton(
             onPressed: () {

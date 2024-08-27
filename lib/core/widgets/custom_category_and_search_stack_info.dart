@@ -19,7 +19,7 @@ class CustomCategoryAndSearchStackInfo extends StatelessWidget {
         children: [
           Text(
             title,
-            maxLines: 5,
+            maxLines: 4,
             overflow: TextOverflow.ellipsis,
             style: Theme.of(context)
                 .textTheme

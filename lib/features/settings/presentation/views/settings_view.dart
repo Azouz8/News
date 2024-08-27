@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news/core/themes/dark_theme/app_colors_dark.dart';
 import 'package:news/features/settings/presentation/views/widgets/settings_view_body.dart';
 
 import '../../../home/presentation/manager/layout_cubit/layout_cubit.dart';
