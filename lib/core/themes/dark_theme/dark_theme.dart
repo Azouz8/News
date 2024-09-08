@@ -14,19 +14,30 @@ ThemeData getDarkTheme() => ThemeData(
         displaySmall: TextStylesDark.getDisplaySmall(),
       ),
       inputDecorationTheme: const InputDecorationTheme(
-        hintStyle: TextStyle(color: Colors.grey),
-        border: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
+        hintStyle: TextStyle(
+          color: Colors.grey,
+        ),
+        border: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: Colors.grey,
+          ),
+        ),
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         backgroundColor: AppColorsDark.scaffoldBackgroundColor.withOpacity(0.8),
-        selectedIconTheme: const IconThemeData(color: Color(0xffff5d65)),
+        selectedIconTheme: const IconThemeData(
+          color: Color(0xffff5d65),
+        ),
         selectedItemColor: const Color(0xffff5d65),
       ),
       dropdownMenuTheme: DropdownMenuThemeData(
         menuStyle: MenuStyle(
-            backgroundColor:
-                WidgetStateProperty.all<Color>(const Color(0xff23272e))),
+          backgroundColor: WidgetStateProperty.all<Color>(
+            const Color(0xff23272e),
+          ),
+        ),
       ),
-      appBarTheme:
-          const AppBarTheme(color: AppColorsDark.scaffoldBackgroundColor),
+      appBarTheme: const AppBarTheme(
+        color: AppColorsDark.scaffoldBackgroundColor,
+      ),
     );

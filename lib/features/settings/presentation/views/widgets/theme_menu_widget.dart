@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news/core/theme_data_menu_item.dart';
+import 'package:news/features/settings/presentation/views/widgets/theme_data_menu_item.dart';
 import 'package:news/features/home/presentation/manager/layout_cubit/layout_cubit.dart';
 
 import '../../../../../core/cache_helper.dart';

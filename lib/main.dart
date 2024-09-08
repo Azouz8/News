@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news/core/app_router.dart';
+import 'package:news/core/routing/app_router.dart';
 import 'package:news/core/cache_helper.dart';
 import 'package:news/core/service_locator.dart';
 import 'package:news/core/themes/dark_theme/dark_theme.dart';

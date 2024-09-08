@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class LatestNewsLoadingWidget extends StatelessWidget {
-  LatestNewsLoadingWidget({super.key});
+  const LatestNewsLoadingWidget({super.key});
   @override
   Widget build(BuildContext context) {
   final bool isLightMode = Theme.of(context).brightness == Brightness.light;

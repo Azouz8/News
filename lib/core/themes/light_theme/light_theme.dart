@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:news/core/themes/light_theme/app_colors_light.dart';
 import 'package:news/core/themes/light_theme/text_styles_light.dart';
 
@@ -22,7 +23,13 @@ ThemeData getLightTheme() => ThemeData(
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: Colors.white70,
         selectedIconTheme: IconThemeData(color: Color(0xffff5d65)),
-          selectedItemColor:  Color(0xffff5d65),
-
+        selectedItemColor: Color(0xffff5d65),
+      ),
+      appBarTheme: const AppBarTheme(
+        color: AppColorsLight.scaffoldBackgroundColor,
+        systemOverlayStyle: SystemUiOverlayStyle(
+          statusBarBrightness: Brightness.light,
+          statusBarColor: AppColorsLight.scaffoldBackgroundColor,
+        ),
       ),
     );

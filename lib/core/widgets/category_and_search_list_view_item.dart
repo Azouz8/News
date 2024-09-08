@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:news/core/app_router.dart';
+import 'package:news/core/routing/app_router.dart';
 import 'package:news/core/assets.dart';
 import 'package:news/features/home/data/models/NewsModel.dart';
 

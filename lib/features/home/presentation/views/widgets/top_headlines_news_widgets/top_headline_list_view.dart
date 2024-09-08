@@ -26,6 +26,7 @@ class TopHeadLinesListView extends StatelessWidget {
                             width: 8,
                           ),
                       itemCount: state.news.length,
+                      physics: const BouncingScrollPhysics(),
                       scrollDirection: Axis.horizontal),
                 );
         } else if (state is TopHeadlinesFailure) {
@@ -41,8 +42,8 @@ class TopHeadLinesListView extends StatelessWidget {
             child: ListView.separated(
                 itemBuilder: (context, index) => LatestNewsLoadingWidget(),
                 separatorBuilder: (context, index) => const SizedBox(
-                  width: 8,
-                ),
+                      width: 8,
+                    ),
                 itemCount: 3,
                 scrollDirection: Axis.horizontal),
           );

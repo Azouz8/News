@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:news/features/home/presentation/manager/layout_cubit/layout_cubit.dart';
 import 'package:news/features/home/presentation/manager/layout_cubit/layout_state.dart';
 
-import '../../../../../../core/app_router.dart';
+import '../../../../../../core/routing/app_router.dart';
 
 class CustomNavBar extends StatelessWidget {
   const CustomNavBar({super.key});

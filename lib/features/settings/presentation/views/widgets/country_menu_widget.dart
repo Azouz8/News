@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news/core/cache_helper.dart';
-import 'package:news/core/country_menu_item.dart';
+import 'package:news/features/settings/presentation/views/widgets/country_menu_item.dart';
 import 'package:news/features/home/presentation/manager/news_category_cubit/news_category_cubit.dart';
 import 'package:news/features/home/presentation/manager/top_headlines_cubit/top_headlines_cubit.dart';
 
