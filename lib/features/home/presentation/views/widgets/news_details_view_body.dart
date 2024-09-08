@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:news/core/assets.dart';
 import 'package:news/features/home/data/models/NewsModel.dart';
 
 import 'news_details/custom_back_button.dart';
@@ -22,7 +23,7 @@ class NewsDetailsViewBody extends StatelessWidget {
             bottom: 375,
             child: CachedNetworkImage(
               imageUrl: newsModel.imageUrl ??
-                  "https://media.istockphoto.com/id/1369150014/vector/breaking-news-with-world-map-background-vector.jpg?s=1024x1024&w=is&k=20&c=blBt3PJbOSEZF5_zB5YgKYeq9Zx_RMOLntX_nI3lliQ=",
+                  AssetsData.networkImg,
               fit: BoxFit.fill,
             )),
         Positioned(

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:news/core/service_locator.dart';
@@ -7,6 +8,7 @@ import 'package:news/features/home/presentation/manager/news_category_cubit/news
 import 'package:news/features/home/presentation/views/see_all_view.dart';
 import 'package:news/features/search/presentation/views/search_view.dart';
 import 'package:news/features/settings/presentation/views/settings_view.dart';
+
 import '../features/home/presentation/views/home_view.dart';
 import '../features/home/presentation/views/news_details_view.dart';
 
@@ -16,21 +18,80 @@ abstract class AppRouter {
   static const searchView = "/searchView";
   static const settingsView = "/settingsView";
   static final router = GoRouter(routes: [
-    GoRoute(path: '/', builder: (context, state) =>  const HomeView()),
     GoRoute(
+      path: '/',
+      pageBuilder: (context, state) {
+        return CustomTransitionPage(
+          child: const HomeView(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(
+              opacity: CurveTween(curve: Curves.easeInOut).animate(animation),
+              child: child,
+            );
+          },
+        );
+      },
+    ),
+    GoRoute(
+      pageBuilder: (context, state) {
+        return CustomTransitionPage(
+          child: BlocProvider(
+            create: (context) => NewsCategoryCubit(getIt.get<HomeRepoImpl>()),
+            child: NewsDetailsView(
+              newsModel: state.extra as NewsModel,
+            ),
+          ),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(
+              opacity: CurveTween(curve: Curves.easeInOut).animate(animation),
+              child: child,
+            );
+          },
+        );
+      },
       path: newsDetailsView,
-      builder: (context, state) => BlocProvider(
-        create: (context) => NewsCategoryCubit(getIt.get<HomeRepoImpl>()),
-        child: NewsDetailsView(
-          newsModel: state.extra as NewsModel,
-        ),
-      ),
     ),
     GoRoute(
       path: seeAllView,
-      builder: (context, state) => const SeeAllView(),
+      pageBuilder: (context, state) {
+        return CustomTransitionPage(
+          child: const SeeAllView(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(
+              opacity: CurveTween(curve: Curves.easeInOut).animate(animation),
+              child: child,
+            );
+          },
+        );
+      },
     ),
-    GoRoute(path: searchView, builder: (context, state) => const SearchView(),),
-    GoRoute(path: settingsView, builder: (context, state) => const SettingsView(),)
+    GoRoute(
+      path: searchView,
+      pageBuilder: (context, state) {
+        return CustomTransitionPage(
+          child: const SearchView(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(
+              opacity: CurveTween(curve: Curves.easeInOut).animate(animation),
+              child: child,
+            );
+          },
+        );
+      },
+    ),
+    GoRoute(
+      path: settingsView,
+      pageBuilder: (context, state) {
+        return CustomTransitionPage(
+          child: const SettingsView(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(
+              opacity: CurveTween(curve: Curves.easeInOut).animate(animation),
+              child: child,
+            );
+          },
+        );
+      },
+    )
   ]);
 }

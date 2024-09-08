@@ -39,7 +39,7 @@ class TopHeadLinesListView extends StatelessWidget {
           return SizedBox(
             height: MediaQuery.sizeOf(context).height * 0.3,
             child: ListView.separated(
-                itemBuilder: (context, index) => const LatestNewsLoadingWidget(),
+                itemBuilder: (context, index) => LatestNewsLoadingWidget(),
                 separatorBuilder: (context, index) => const SizedBox(
                   width: 8,
                 ),
