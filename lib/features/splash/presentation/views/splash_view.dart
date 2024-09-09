@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:news/core/assets.dart';
+import 'package:news/core/cache_helper.dart';
 import 'package:news/core/routing/app_router.dart';
 
 class SplashView extends StatefulWidget {
@@ -20,7 +21,11 @@ class _SplashViewState extends State<SplashView>
     Future.delayed(
       const Duration(seconds: 2),
       () {
-        GoRouter.of(context).pushReplacement(AppRouter.homeView);
+        if(CacheHelper.getBoolean(key: "OnBoarding") == null || CacheHelper.getBoolean(key: "OnBoarding") == false){
+          GoRouter.of(context).pushReplacement(AppRouter.onboardingView);
+        }
+        else
+          GoRouter.of(context).pushReplacement(AppRouter.homeView);
       },
     );
   }

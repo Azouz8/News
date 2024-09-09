@@ -19,13 +19,13 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setupServiceLocator();
   await CacheHelper.init();
-  if(CacheHelper.getString(key: "country") == null)
-    CacheHelper.putString(key: "country", value: "us");
-  if(CacheHelper.getBoolean(key: "isDark")==null)
-    CacheHelper.putBoolean(key: "isDark", value: false);
-  String country = CacheHelper.getString(key: "country")!;
-  bool isDark = CacheHelper.getBoolean(key: "isDark")!;
-  runApp(MyApp(country: country, isDark: isDark,));
+  // if(CacheHelper.getString(key: "country") == null)
+  //   CacheHelper.putString(key: "country", value: "us");
+  // if(CacheHelper.getBoolean(key: "isDark")==null)
+  //   CacheHelper.putBoolean(key: "isDark", value: false);
+  String? country = CacheHelper.getString(key: "country");
+  bool? isDark = CacheHelper.getBoolean(key: "isDark");
+  runApp(MyApp(country: country??"us", isDark: isDark??false,));
 }
 
 class MyApp extends StatelessWidget {

@@ -1,5 +1,5 @@
 class ThemeDataMenuItem{
-  final String theme;
+  late final String theme;
 
   ThemeDataMenuItem({required this.theme});
 

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news/features/settings/presentation/views/widgets/theme_data_menu_item.dart';
 import 'package:news/features/home/presentation/manager/layout_cubit/layout_cubit.dart';
-
+import 'package:news/features/settings/presentation/views/widgets/theme_data_menu_item.dart';
 import '../../../../../core/cache_helper.dart';
 
 class ThemeMenu extends StatelessWidget {
@@ -12,14 +11,20 @@ class ThemeMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeDataMenuItem? themeDataMenuItem;
+    if (CacheHelper.getBoolean(key: "isDark") == null)
+      themeDataMenuItem = ThemeDataMenuItem(theme: "Nothing");
+    else if (CacheHelper.getBoolean(key: "isDark") == true)
+      themeDataMenuItem = ThemeDataMenuItem(theme: "Dark");
+    else
+      themeDataMenuItem = ThemeDataMenuItem(theme: "Light");
     return DropdownMenu<ThemeDataMenuItem>(
       textStyle: const TextStyle(fontSize: 20),
-      initialSelection: CacheHelper.getBoolean(key: "isDark") == true
-          ? ThemeDataMenuItem(theme: "Dark")
-          : ThemeDataMenuItem(theme: "Light"),
+      initialSelection: themeDataMenuItem,
       width: MediaQuery.sizeOf(context).width * 0.9,
       controller: menuController,
       label: const Text("Theme"),
+
       dropdownMenuEntries: [
         DropdownMenuEntry(
           value: ThemeDataMenuItem(theme: 'Light'),
@@ -35,7 +40,8 @@ class ThemeMenu extends StatelessWidget {
         ),
       ],
       onSelected: (value) {
-        CacheHelper.putBoolean(key: "isDark", value:  value!.theme == "Dark" ? true : false);
+        CacheHelper.putBoolean(
+            key: "isDark", value: value!.theme == "Dark" ? true : false);
         BlocProvider.of<LayoutCubit>(context)
             .changeAppMode(dark: value.theme == "Dark" ? true : false);
       },

@@ -9,17 +9,19 @@ class CountryMenu extends StatelessWidget {
   CountryMenu({super.key});
 
   final countryController = TextEditingController();
-  var country = CacheHelper.getString(key: 'country');
+
   @override
   Widget build(BuildContext context) {
-    print(country);
+    CountryMenuItem? countryMenuItem;
+    if (CacheHelper.getString(key: "country") == null)
+      countryMenuItem = CountryMenuItem(country: "Nothing");
+    else if (CacheHelper.getString(key: "country").toString() == "us")
+      countryMenuItem = CountryMenuItem(country: "us");
+    else
+      countryMenuItem = CountryMenuItem(country: "eg");
     return DropdownMenu<CountryMenuItem>(
       textStyle: const TextStyle(fontSize: 20),
-      initialSelection:
-          CacheHelper.getString(key: 'country').toString() ==
-                  "us"
-              ? CountryMenuItem(country: "us")
-              : CountryMenuItem(country: "eg"),
+      initialSelection: countryMenuItem,
       width: MediaQuery.sizeOf(context).width * 0.9,
       controller: countryController,
       label: const Text("Country"),
