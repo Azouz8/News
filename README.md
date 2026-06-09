@@ -1,16 +1,44 @@
-# news
+# Newsy Mobile App
 
-A new Flutter project.
+## Overview
+
+Newsy is a Flutter-based news application that delivers real-time headlines from around the world. It provides users with a smooth experience for browsing, searching, and filtering news based on their preferences.
+
+## Features
+
+* Onboarding flow
+* Browse top headlines
+* Search for news articles
+* Country-based filtering
+* Personalized news experience
+* Real-time updates through REST APIs
+* Clean and responsive UI
+* State management using BloC
+
+## Technologies Used
+
+* Flutter
+* Dart
+* BloC (Cubit)
+* REST APIs
+* Dio
+* Google Fonts
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Installation
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+git clone <repository-url>
+cd Newsy
+flutter pub get
+flutter run
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Project Structure
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The application follows a clean and scalable architecture with separated presentation, business logic, and data layers.
+
+## Author
+
+Ali Azouz
